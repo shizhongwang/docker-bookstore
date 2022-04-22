@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn" monitorInterval="30" packages="com.refinitiv.collab.platform.log">
+    <MarkerFilter marker="FLOW" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <MarkerPatternSelector defaultPattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n">
+                    <PatternMatch key="FLOW" pattern="%d [%t] %-5p %C{1.}.%M:%L %m %n"/>
+                </MarkerPatternSelector>
+            </PatternLayout>
+        </Console>
+
+        <RollingFile name="RollingFile" fileName="logs/rolling.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="50MB"/>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+        <!--        <ListAppender name="ListAppender">-->
+        <!--            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+        <!--        </ListAppender>-->
+        <!--        <StringAppender name="StringAppender">-->
+        <!--            <PatternLayout pattern=" %msg%n"/>-->
+        <!--        </StringAppender>-->
+
+        <!--        <MyCustomAppender name="ABC">-->
+        <!--&lt;!&ndash;            <PatternLayout pattern=" %msg%n/%n"/>&ndash;&gt;-->
+        <!--        </MyCustomAppender>-->
+    </appenders>
+
+    <loggers>
+        <root level="debug">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFile"/>
+
+            <!--            <AppenderRef ref="ABC" />-->
+            <!--            <appender-ref ref="ListAppender" level="All"/>-->
+            <!--            <appender-ref ref="StringAppender" level="All"/>-->
+        </root>
+        <Logger name="com.refinitiv" level="debug"/>
+    </loggers>
+</configuration>

@@ -1,0 +1,89 @@
+<p>表单输入信息校验</p>
+<!-- <div ng-controller="myCtrl">
+     名字: <input ng-model="name"><br>
+    angularJS双向绑定：{{name}}
+</div> -->
+
+<!-- <form name="myForm01">
+Email:<input type="email" name="myEmail01" ng-model="text">
+<span ng-show="myForm01.myEmail01.$error.email" style="color: red">邮箱地址不合法!</span><br>
+    数据校验结果：<span>{{myForm01.myEmail01.$error.email}}</span>
+</form> -->
+
+<div class="row">
+    <!-- master details for book -->
+    <div class="col-lg-12">
+        <div class="row">
+            <!-- To display the image -->
+            <div class="col-12 col-md-4">
+                <div class="thumbnail">
+                    <img src="{{book.imageUrl}}" width="250" height="300" alt="book" />
+                </div>
+            </div>
+
+            <!-- To display the book info -->
+            <div class="col-12 col-md-8">
+                <h3>{{book.name}}</h3>
+                <hr/>
+
+                <p>{{book.description}}</p>
+                <hr/>
+
+                <h4>Price: <strong>{{book.amount | currency: 'INR'}}</strong></h4>
+                <hr/>
+
+                <h6>Qty. Available: {{book.unitsInStock}}</h6>
+                <hr/>
+
+                <a routerLink="/books" class="btn btn-success">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
+
+                <button (click)="addToCart()" class="btn btn-primary ml-1">
+                    <i class="fas fa-cart-arrow-down"></i> Add to cart
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <!-- <input type="text" name="chargeid2" ng-model="item.chargeid2" ng-keyup="clearNoNum(item,'chargeid2')" placeholder="" class="form-control input-sm" > -->
+
+            <!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+                <fieldset ngModelGroup="user">
+                    <input type="text" required minlength="3" name="username" [(ngModel)]="username" #userName="ngModel">
+                    <div *ngIf="userName.errors?.required">请您输入用户名</div>
+                    <div *ngIf="userName.errors?.minlength">
+                        用户名的长度必须大于 {{userName.errors?.minlength.requiredLength}}，当前的长度为 {{userName.errors?.minlength.actualLength}}
+                    </div>
+                    <input type="password" ngModel name="password">
+                </fieldset>
+                <button type="submit">提交</button>
+                <!-- {{loginForm.value | json}} -->
+            <!-- </form> --> -->
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-4">col-md-4</div>
+        <!-- 说明：每row行共12列，分个3div，每个div平占4列，即3个*4列=12列 -->
+    </div>
+    <div class="row">
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-8">col-md-8</div>
+        <!-- 说明：每row行共12列，分个2div，第1个div占4列，第2个div则占8列，即4列+8列=12列 -->
+    </div>
+    <div class="row">
+        <div class="col-md-3">col-md-3</div>
+        <div class="col-md-6">col-md-6</div>
+        <div class="col-md-3">col-md-3</div>
+        <!-- 说明：每row行共12列，分个3div，每1,3个div占3列，第2个div则占6列，即3列+6列+3列=12列 -->
+    </div>
+</div>
