@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   mysql:
-    # platform: linux/x86_64
+    platform: linux/x86_64
     image: mysql/mysql-server:5.7.28
     container_name: mysql
     restart: always
