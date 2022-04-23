@@ -9,8 +9,8 @@ export class UploadFileService {
   private baseUrl = "http://49.7.182.249:9200/upload";
   private getFileUrl = "http://49.7.182.249:9200/getFiles";
 
-  // private baseUrl = "http://localhost:8080/upload";
-  // private getFileUrl = "http://localhost:8080/getFiles";
+  // private baseUrl = "http://localhost:9200/upload";
+  // private getFileUrl = "http://localhost:9200/getFiles";
 
   constructor(private http: HttpClient) {}
 

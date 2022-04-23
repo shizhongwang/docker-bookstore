@@ -15,8 +15,8 @@ export class BookService {
 
   // private baseUrl = "http://49.7.182.249:9200/books";
   // private categoryUrl = "http://49.7.182.249:9200/book-category";
-  private baseUrl = "http://localhost:8080/books";
-  private categoryUrl = "http://localhost:8080/book-category";
+  private baseUrl = "http://localhost:9200/books";
+  private categoryUrl = "http://localhost:9200/book-category";
   bookString : string;
 
   private axiosClient: AxiosInstance;
