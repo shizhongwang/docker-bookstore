@@ -1,4 +1,4 @@
-<h2>人员登记系统</h2>
+<h2>添加文档</h2>
 
 <div class="row">
     <div class="col-12 col-md-4">
@@ -9,16 +9,16 @@
 
     <div class="col-12 col-md-8">
         <div class="row">
-            <h5>名称：<input class="form_input" type="text" id="bookname" [(ngModel)]="book.name"></h5>
+            <h6>名称<input class="form_input" type="text" id="bookname" [(ngModel)]="book.name"></h6>
         </div>
         <div class="row">
-            <h5>FirstParty：<input class="form_input" type="text" id="FirstParty" [(ngModel)]="book.firstParty"></h5>
+            <h6>简介<input class="form_input" type="text" id="FirstParty" [(ngModel)]="book.firstParty"></h6>
         </div>
         <hr/>
 
 
         <div class="row">
-            <div class="col-12 col-md-6">分类：
+            <div class="col-12 col-md-6">类别
                 <div class="form-group">
                     <select class="form-control"  id="power" required [(ngModel)]="categoryId" name="power" (ngModelChange)="onSelect(categoryId)">
                         <option *ngFor="let pow of bookCategories" [value]="pow.id">{{pow.id}} [{{pow.categoryName}}]</option>
@@ -27,7 +27,7 @@
 
             </div>
             <div class="col-12 col-md-6">
-                <h6>日期：<input class="form_input" type="text" id="createdOn" [(ngModel)]="book.createAt"></h6>
+                <h6>日期<input class="form_input" type="text" id="createdOn" [(ngModel)]="book.createAt"></h6>
             </div>
         </div>
 
@@ -38,13 +38,16 @@
             </div>
 
             <div class="col-12 col-md-6">
-                <h6>Qty. Available<strong><input class="form_input" type="text" id="amount" [(ngModel)]="book.unitsInStock"></strong></h6>
+                <h6>数量<strong><input class="form_input" type="text" id="amount" [(ngModel)]="book.unitsInStock"></strong></h6>
             </div>
-            <p>Description:
-                <textarea name="mark" id="mark" cols="30" rows="5" [(ngModel)]="book.description"></textarea>
-            </p>
+
         </div>
 
+        <div class="row">
+            <p>摘要
+                <textarea name="mark" id="mark" cols="80" rows="10" [(ngModel)]="book.description"></textarea>
+            </p>
+        </div>
 
         <a routerLink="/books" class="btn btn-success">
             <i class="fas fa-arrow-left"></i> Back
@@ -55,9 +58,10 @@
         </button>
     </div>
 
-    <pre>
-        <!-- 利用转换成json的方式 -->
-        {{book | json}}
-    </pre>
-</div>
 
+
+
+    <!-- <pre>
+        {{book | json}}
+    </pre> -->
+</div>

@@ -31,7 +31,7 @@ services:
     image: openjdk:11.0.4
     container_name: wsbookstore
     ports:
-      - "9200:8080"
+      - "8080:8080"
     volumes:
       - ./java-bookstore/build/libs/onlinebookstore-0.0.1-SNAPSHOT.jar:/application.jar
     # command: [ "java", "-jar", "application.jar" ]

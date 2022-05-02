@@ -47,7 +47,7 @@ export class CartService {
       totalQuantityValue += currentCartItem.quantity;
     }
 
-    console.log(`Total price: ${totalPriceValue}, Total quantity: ${totalQuantityValue}`);
+    console.log(`Total 金额${totalPriceValue}, Total quantity: ${totalQuantityValue}`);
 
     this.totalPrice.next(totalPriceValue);
     this.totalQuantity.next(totalQuantityValue);

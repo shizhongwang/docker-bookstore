@@ -113,7 +113,7 @@ export class BookListComponent implements OnInit {
   }
 
   addToCart(book: Book){
-    console.log(`book name: ${book.name}, and price: ${book.amount}`);
+    console.log(`book name: ${book.name}, and 金额${book.amount}`);
     const cartItem = new CartItem(book);
     this._cartService.addToCart(cartItem);
   }

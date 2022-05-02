@@ -1810,3 +1810,71 @@ Caused by: java.lang.NumberFormatException: For input string: "NaN"
 2022-04-22 16:13:00.556 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-04-22 16:13:00.582 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
 2022-04-22 16:13:00.628 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-04-27 19:20:08.198 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 97374 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-04-27 19:20:08.211 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-04-27 19:20:08.213 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-04-27 19:20:09.506 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-27 19:20:09.583 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 70 ms. Found 5 JPA repository interfaces.
+2022-04-27 19:20:10.410 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-04-27 19:20:10.416 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-27 19:20:10.417 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-04-27 19:20:10.417 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-04-27 19:20:10.484 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-04-27 19:20:10.485 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2212 ms
+2022-04-27 19:20:10.695 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-27 19:20:10.724 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-04-27 19:20:10.799 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-27 19:20:10.852 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-04-27 19:20:11.095 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-04-27 19:20:11.103 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-04-27 19:20:11.877 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-27 19:20:11.886 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-27 19:20:12.653 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration 221 openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-27 19:20:13.228 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 181 initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-27 19:20:13.575 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-27 19:20:13.588 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 220 start - Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-27 19:20:14.266 INFO  org.springframework.boot.StartupInfoLogger 61 logStarted - Started OnlineBookStoreApplication in 6.607 seconds (JVM running for 7.811)
+2022-04-27 19:20:49.216 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-27 19:20:49.218 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-04-27 19:20:49.225 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 7 ms
+2022-04-27 20:09:09.289 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-27 20:09:09.300 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-27 20:09:09.311 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-04-27 20:09:09.340 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-04-28 11:28:35.193 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 18623 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-04-28 11:28:35.200 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-04-28 11:28:35.203 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-04-28 11:28:36.560 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-28 11:28:36.650 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 80 ms. Found 5 JPA repository interfaces.
+2022-04-28 11:28:37.467 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-04-28 11:28:37.473 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-28 11:28:37.474 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-04-28 11:28:37.475 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-04-28 11:28:37.543 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-04-28 11:28:37.543 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2278 ms
+2022-04-28 11:28:37.781 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-28 11:28:37.809 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-04-28 11:28:37.875 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-28 11:28:37.949 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-04-28 11:28:38.196 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-04-28 11:28:38.221 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-04-28 11:28:38.920 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-28 11:28:38.929 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-28 11:28:39.711 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration 221 openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-28 11:28:40.302 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 181 initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-28 11:28:40.683 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-28 11:28:40.701 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 220 start - Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-28 11:28:41.448 INFO  org.springframework.boot.StartupInfoLogger 61 logStarted - Started OnlineBookStoreApplication in 6.783 seconds (JVM running for 8.006)
+2022-04-28 11:29:30.611 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-28 11:29:30.614 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-04-28 11:29:30.625 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 11 ms
+2022-04-28 14:02:17.746 WARN  com.zaxxer.hikari.pool.HikariPool$HouseKeeper 787 run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m38s196ms).
+2022-04-28 14:32:19.485 WARN  com.zaxxer.hikari.pool.HikariPool$HouseKeeper 787 run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s454ms).
+2022-04-28 17:46:51.637 WARN  com.zaxxer.hikari.pool.HikariPool$HouseKeeper 779 run - HikariPool-1 - Retrograde clock change detected (housekeeper delta=29s800ms), soft-evicting connections from pool.
+2022-04-28 18:06:57.282 WARN  com.zaxxer.hikari.pool.HikariPool$HouseKeeper 787 run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m35s346ms).
+2022-04-28 19:10:40.501 WARN  com.zaxxer.hikari.pool.HikariPool$HouseKeeper 787 run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m12s670ms).
+2022-04-28 19:42:51.725 WARN  com.zaxxer.hikari.pool.HikariPool$HouseKeeper 787 run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m10s941ms).
+2022-04-28 21:13:23.158 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-28 21:13:23.186 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-28 21:13:23.246 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-04-28 21:13:23.276 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.

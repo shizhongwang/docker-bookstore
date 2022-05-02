@@ -21,12 +21,15 @@
     "@angular/router": "~8.2.14",
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@ng-bootstrap/ng-bootstrap": "~5.2.2",
+    "ag-grid-angular": "^27.2.1",
+    "ag-grid-community": "^27.2.1",
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.1",
     "jw-angular-pagination": "^1.1.0",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.18.7/xlsx-0.18.7.tgz",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {

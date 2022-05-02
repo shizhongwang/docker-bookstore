@@ -26,6 +26,8 @@ import { DetailsUploadFileComponent } from './components/details-upload-file/det
 //client side paging
 //import { JwPaginationComponent } from 'jw-angular-pagination';
 
+import { AgGridModule } from 'ag-grid-angular';
+
 
 const routes: Routes = [
   {path: 'upload-files', component: CreateUploadFileComponent},
@@ -67,7 +69,8 @@ const routes: Routes = [
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgGridModule.withComponents([])
   ],
   providers: [
     BookService,

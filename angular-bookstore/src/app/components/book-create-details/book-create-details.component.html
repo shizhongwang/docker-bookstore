@@ -29,10 +29,10 @@ Email:<input type="email" name="myEmail01" ng-model="text">
                 <p>{{book.description}}</p>
                 <hr/>
 
-                <h4>Price: <strong>{{book.amount | currency: 'INR'}}</strong></h4>
+                <h4>金额<strong>{{book.amount | currency: 'INR'}}</strong></h4>
                 <hr/>
 
-                <h6>Qty. Available: {{book.unitsInStock}}</h6>
+                <h6>数量 {{book.unitsInStock}}</h6>
                 <hr/>
 
                 <a routerLink="/books" class="btn btn-success">

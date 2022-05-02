@@ -15,11 +15,12 @@
             <img class="card-img-top img-responsive" [src]="book.imageUrl" height="250" width="100">
           </a>
           <div class="card-body">
-            <h4 class="card-title">
+            <h5 class="card-title">
               <a routerLink="/books/{{book.id}}">{{book.name}}</a>
-            </h4>
-            <h5>{{book.amount | currency: 'INR'}}</h5>
-            <p class="card-text text-truncate">{{book.description}}</p>
+            </h5>
+            <h6>{{book.amount | currency: 'INR'}}</h6>
+            <!-- <p class="card-text text-truncate">{{book.description}}</p> -->
+            <p>{{book.description}}</p>
           </div>
           <div class="card-footer">
             <button class="btn btn-primary float-right" (click)="addToCart(book)">Add Cart</button>
