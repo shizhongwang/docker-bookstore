@@ -27,10 +27,12 @@ import { DetailsUploadFileComponent } from './components/details-upload-file/det
 //import { JwPaginationComponent } from 'jw-angular-pagination';
 
 import { AgGridModule } from 'ag-grid-angular';
+import { FileReviewGridComponent } from './components/file-review-grid/file-review-grid.component';
 
 
 const routes: Routes = [
-  {path: 'upload-files', component: CreateUploadFileComponent},
+  {path: 'create-upload-files', component: CreateUploadFileComponent},
+  {path: 'file-review-grid', component: FileReviewGridComponent},
 
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
@@ -59,7 +61,8 @@ const routes: Routes = [
 
     CreateUploadFileComponent,
     ListUploadFileComponent,
-    DetailsUploadFileComponent
+    DetailsUploadFileComponent,
+    FileReviewGridComponent
     //client side paging
     //JwPaginationComponent
   ],

@@ -21,4 +21,12 @@ export class SearchComponent implements OnInit {
   callBookCreateForm(){
     this._router.navigateByUrl('book-create-form');
   }
+
+  callCreateUploadFilesForm(){
+    this._router.navigateByUrl('create-upload-files');
+  }
+
+  callFileReviewGridForm(){
+    this._router.navigateByUrl('file-review-grid');
+  }
 }
