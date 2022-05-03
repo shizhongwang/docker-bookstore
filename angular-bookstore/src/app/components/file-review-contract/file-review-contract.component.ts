@@ -12,33 +12,40 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-enterprise';
 
 @Component({
-  selector: 'app-file-review-grid',
-  templateUrl: './file-review-grid.component.html',
-  styleUrls: ['./file-review-grid.component.css']
+  selector: 'app-file-review-contract',
+  templateUrl: './file-review-contract.component.html',
+  styleUrls: ['./file-review-contract.component.css']
 })
 
-export class FileReviewGridComponent {
+// `id`             BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+// `client_name`           VARCHAR(255)   DEFAULT NULL,
+// `contract_num`    VARCHAR(255)   DEFAULT NULL,
+// `contract_at`      DATETIME       DEFAULT NULL,
+// `contract_amount`         DECIMAL(13, 2) DEFAULT NULL,
+// `project_name`    VARCHAR(255)   DEFAULT NULL,
+
+// `desc`    VARCHAR(10240)   DEFAULT NULL,
+//客户	扫描件	应收账款	合同编号	合同日期	项目名称	合同金额
+
+export class FileReviewContractComponent {
   public columnDefs: ColDef[] = [
     {
-      field: 'athlete',
-      minWidth: 170,
+      headerName: 'ID',       field: 'id',
+      minWidth: 30,
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },
-    { field: 'age' },
-    { field: 'country' },
-    { field: 'year' },
-    { field: 'date' },
-    { field: 'sport' },
-    { field: 'gold' },
-    { field: 'silver' },
-    { field: 'bronze' },
-    { field: 'total' },
+    { headerName: '客户',      field: 'client_name' },
+    { headerName: '合同编号',   field: 'contract_num' },
+    { headerName: '合同日期',   field: 'contract_at' },
+    { headerName: '应收账款',   field: 'contract_amount' },
+    { headerName: '项目名称',   field: 'project_name' },
+    { headerName: '备注',       field: 'desc' },
   ];
   public autoGroupColumnDef: ColDef = {
     headerName: 'Group',
     minWidth: 170,
-    field: 'athlete',
+    field: 'id',
     valueGetter: function (params) {
       if (params.node!.group) {
         return params.node!.key;
@@ -78,22 +85,15 @@ export class FileReviewGridComponent {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
-    this.http
-      .get<any[]>(
-        "https://www.ag-grid.com/example-assets/olympic-winners.json"
-      )
-      .subscribe(data => {
-        this.rowData = data;
-        // this.gridApi.setRowData(this.rowData);
-        params.api!.setRowData(data);
-      });
-
-
     // this.http
-    //   .get<any[]>('https://www.ag-grid.com/example-assets/olympic-winners.json')
-    //   .subscribe((data) => {this.rowData = data; params.api.setRowData(this.rowData);});
-
-
+    //   .get<any[]>(
+    //     "https://www.ag-grid.com/example-assets/olympic-winners.json"
+    //   )
+    //   .subscribe(data => {
+    //     this.rowData = data;
+    //     // this.gridApi.setRowData(this.rowData);
+    //     params.api!.setRowData(data);
+    //   });
   }
 
   onRowDataA() {

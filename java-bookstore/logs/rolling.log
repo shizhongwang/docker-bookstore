@@ -1878,3 +1878,867 @@ Caused by: java.lang.NumberFormatException: For input string: "NaN"
 2022-04-28 21:13:23.186 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-04-28 21:13:23.246 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
 2022-04-28 21:13:23.276 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-05-03 20:55:26.832 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 61728 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-05-03 20:55:26.846 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-05-03 20:55:26.849 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-05-03 20:55:28.254 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 20:55:28.337 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 75 ms. Found 6 JPA repository interfaces.
+2022-05-03 20:55:29.265 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 20:55:29.273 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 20:55:29.274 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-05-03 20:55:29.274 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-05-03 20:55:29.348 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-05-03 20:55:29.348 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2410 ms
+2022-05-03 20:55:29.696 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 20:55:29.786 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-05-03 20:55:30.000 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 20:55:30.085 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-05-03 20:55:30.660 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-05-03 20:55:30.671 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-03 20:55:31.568 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 20:55:31.575 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 20:55:32.101 WARN  org.springframework.context.support.AbstractApplicationContext 591 refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'contractStatementController': Unsatisfied dependency expressed through field 'contractStatementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'contractStatementService': Unsatisfied dependency expressed through field 'contractStatementRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'contractStatementRepository' defined in com.bookstore.repository.ContractStatementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract org.springframework.data.domain.Page com.bookstore.repository.ContractStatementRepository.findByClientNameContaining(java.lang.String,org.springframework.data.domain.Pageable)! No property clientName found for type ContractStatement!
+2022-05-03 20:55:32.102 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 20:55:32.106 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-05-03 20:55:32.119 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-05-03 20:55:32.123 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Stopping service [Tomcat]
+2022-05-03 20:55:32.136 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener 136 logMessage - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-03 20:55:32.150 ERROR org.springframework.boot.SpringApplication 871 reportFailure - Application run failed org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'contractStatementController': Unsatisfied dependency expressed through field 'contractStatementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'contractStatementService': Unsatisfied dependency expressed through field 'contractStatementRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'contractStatementRepository' defined in com.bookstore.repository.ContractStatementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract org.springframework.data.domain.Page com.bookstore.repository.ContractStatementRepository.findByClientNameContaining(java.lang.String,org.springframework.data.domain.Pageable)! No property clientName found for type ContractStatement!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) [spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) [spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) [spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) [spring-boot-2.4.5.jar:2.4.5]
+	at com.bookstore.OnlineBookStoreApplication.main(OnlineBookStoreApplication.java:25) [main/:?]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'contractStatementService': Unsatisfied dependency expressed through field 'contractStatementRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'contractStatementRepository' defined in com.bookstore.repository.ContractStatementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract org.springframework.data.domain.Page com.bookstore.repository.ContractStatementRepository.findByClientNameContaining(java.lang.String,org.springframework.data.domain.Pageable)! No property clientName found for type ContractStatement!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.6.jar:5.3.6]
+	... 21 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'contractStatementRepository' defined in com.bookstore.repository.ContractStatementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract org.springframework.data.domain.Page com.bookstore.repository.ContractStatementRepository.findByClientNameContaining(java.lang.String,org.springframework.data.domain.Pageable)! No property clientName found for type ContractStatement!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.6.jar:5.3.6]
+	... 21 more
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract org.springframework.data.domain.Page com.bookstore.repository.ContractStatementRepository.findByClientNameContaining(java.lang.String,org.springframework.data.domain.Pageable)! No property clientName found for type ContractStatement!
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:100) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:93) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) ~[?:?]
+	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1054) ~[?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:95) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at java.util.Optional.map(Optional.java:265) ~[?:?]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:303) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.6.jar:5.3.6]
+	... 21 more
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property clientName found for type ContractStatement!
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:90) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:437) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:413) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:366) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330) ~[?:?]
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:348) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:331) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:249) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) ~[?:?]
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:250) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:383) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) ~[?:?]
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:384) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:95) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:100) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:93) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) ~[?:?]
+	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1054) ~[?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:95) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at java.util.Optional.map(Optional.java:265) ~[?:?]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:303) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.6.jar:5.3.6]
+	... 21 more
+
+2022-05-03 20:59:04.489 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 61849 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-05-03 20:59:04.501 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-05-03 20:59:04.502 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-05-03 20:59:05.924 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 20:59:06.029 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 97 ms. Found 6 JPA repository interfaces.
+2022-05-03 20:59:06.975 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 20:59:06.985 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 20:59:06.986 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-05-03 20:59:06.987 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-05-03 20:59:07.068 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-05-03 20:59:07.069 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2481 ms
+2022-05-03 20:59:07.329 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 20:59:07.363 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-05-03 20:59:07.452 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 20:59:07.533 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-05-03 20:59:07.816 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-05-03 20:59:07.826 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-03 20:59:08.700 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 20:59:08.709 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 20:59:09.538 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration 221 openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 20:59:10.118 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 181 initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-03 20:59:10.484 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 20:59:10.496 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 220 start - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 20:59:11.242 INFO  org.springframework.boot.StartupInfoLogger 61 logStarted - Started OnlineBookStoreApplication in 7.322 seconds (JVM running for 8.474)
+2022-05-03 21:01:02.842 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-03 21:01:02.845 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-05-03 21:01:02.868 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 23 ms
+2022-05-03 21:01:35.135 DEBUG com.bookstore.service.ContractStatementService 20 saveOrUpdate - ContractStatement(id=100, transactionAt=null, voucherNum=null, debitAmount=0.0, creditAmount=0.0, remainingBalance=0.0, bankSerialId=setBankSerialId0001, oppositeAccountNum=null, oppositeCompanyName=null, category=null, invoiceNum=null, desc=null, createAt=null, updateAt=null)
+2022-05-03 21:01:35.307 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper 137 logExceptions - SQL Error: 1064, SQLState: 42000
+2022-05-03 21:01:35.307 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper 142 logExceptions - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc, invoice_num, opposite_account_num, opposite_company_name, remaining_balanc' at line 1
+2022-05-03 21:01:35.340 ERROR org.apache.juli.logging.DirectJDKLog 175 log - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement] with root cause com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc, invoice_num, opposite_account_num, opposite_company_name, remaining_balanc' at line 1
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.Util.getInstance(Util.java:408) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3195) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3801) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.saveTransientEntity(DefaultMergeEventListener.java:271) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsTransient(DefaultMergeEventListener.java:243) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:318) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:172) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:70) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:793) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:780) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy111.merge(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy111.merge(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:560) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy126.save(Unknown Source) ~[?:?]
+	at com.bookstore.service.ContractStatementService.saveOrUpdate(ContractStatementService.java:22) ~[main/:?]
+	at com.bookstore.controller.ContractStatementController.createContractStatement(ContractStatementController.java:26) ~[main/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+2022-05-03 21:03:59.178 DEBUG com.bookstore.service.ContractStatementService 20 saveOrUpdate - ContractStatement(id=100, transactionAt=null, voucherNum=null, debitAmount=0.0, creditAmount=0.0, remainingBalance=0.0, bankSerialId=setBankSerialId0001, oppositeAccountNum=null, oppositeCompanyName=null, category=null, invoiceNum=null, desc=null, createAt=null, updateAt=null)
+2022-05-03 21:03:59.240 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper 137 logExceptions - SQL Error: 1064, SQLState: 42000
+2022-05-03 21:03:59.240 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper 142 logExceptions - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc, invoice_num, opposite_account_num, opposite_company_name, remaining_balanc' at line 1
+2022-05-03 21:03:59.253 ERROR org.apache.juli.logging.DirectJDKLog 175 log - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement] with root cause com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc, invoice_num, opposite_account_num, opposite_company_name, remaining_balanc' at line 1
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.Util.getInstance(Util.java:408) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3195) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3801) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.saveTransientEntity(DefaultMergeEventListener.java:271) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsTransient(DefaultMergeEventListener.java:243) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:318) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:172) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:70) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:793) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:780) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy111.merge(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy111.merge(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:560) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy126.save(Unknown Source) ~[?:?]
+	at com.bookstore.service.ContractStatementService.saveOrUpdate(ContractStatementService.java:22) ~[main/:?]
+	at com.bookstore.controller.ContractStatementController.createContractStatement(ContractStatementController.java:26) ~[main/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+2022-05-03 21:05:03.558 DEBUG com.bookstore.service.ContractStatementService 20 saveOrUpdate - ContractStatement(id=100, transactionAt=null, voucherNum=null, debitAmount=0.0, creditAmount=0.0, remainingBalance=0.0, bankSerialId=setBankSerialId0001, oppositeAccountNum=null, oppositeCompanyName=null, category=null, invoiceNum=null, desc=null, createAt=null, updateAt=null)
+2022-05-03 21:05:03.674 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper 137 logExceptions - SQL Error: 1064, SQLState: 42000
+2022-05-03 21:05:03.674 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper 142 logExceptions - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc, invoice_num, opposite_account_num, opposite_company_name, remaining_balanc' at line 1
+2022-05-03 21:05:03.683 ERROR org.apache.juli.logging.DirectJDKLog 175 log - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement] with root cause com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc, invoice_num, opposite_account_num, opposite_company_name, remaining_balanc' at line 1
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.Util.getInstance(Util.java:408) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3195) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3801) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.saveTransientEntity(DefaultMergeEventListener.java:271) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsTransient(DefaultMergeEventListener.java:243) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:318) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:172) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:70) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:793) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:780) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy111.merge(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy111.merge(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:560) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy126.save(Unknown Source) ~[?:?]
+	at com.bookstore.service.ContractStatementService.saveOrUpdate(ContractStatementService.java:22) ~[main/:?]
+	at com.bookstore.controller.ContractStatementController.createContractStatement(ContractStatementController.java:26) ~[main/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+2022-05-03 21:09:00.787 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:09:00.800 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:09:00.828 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-05-03 21:09:00.848 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-05-03 21:10:03.965 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 62131 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-05-03 21:10:03.983 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-05-03 21:10:03.987 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-05-03 21:10:05.182 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 21:10:05.280 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 90 ms. Found 6 JPA repository interfaces.
+2022-05-03 21:10:06.023 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 21:10:06.029 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:10:06.030 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-05-03 21:10:06.030 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-05-03 21:10:06.090 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-05-03 21:10:06.090 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2044 ms
+2022-05-03 21:10:06.315 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 21:10:06.347 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-05-03 21:10:06.431 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 21:10:06.478 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-05-03 21:10:06.793 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-05-03 21:10:06.809 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-03 21:10:07.638 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 21:10:07.645 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:10:08.540 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration 221 openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 21:10:09.131 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 181 initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:10:09.481 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:10:09.495 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 220 start - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 21:10:10.229 INFO  org.springframework.boot.StartupInfoLogger 61 logStarted - Started OnlineBookStoreApplication in 6.806 seconds (JVM running for 8.224)
+2022-05-03 21:10:26.723 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-03 21:10:26.724 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-05-03 21:10:26.731 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 6 ms
+2022-05-03 21:10:26.776 DEBUG com.bookstore.service.ContractService 20 saveOrUpdate - Contract(id=100, clientName=setClientName00001, contractNum=null, contractAt=null, contractAmount=null, projectName=null, description=null, createAt=null, updateAt=null)
+2022-05-03 21:18:38.943 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:18:38.966 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:18:38.984 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-05-03 21:18:39.054 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-05-03 21:18:47.836 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 62232 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-05-03 21:18:47.847 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-05-03 21:18:47.849 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-05-03 21:18:49.204 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 21:18:49.295 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 83 ms. Found 6 JPA repository interfaces.
+2022-05-03 21:18:50.026 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 21:18:50.033 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:18:50.034 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-05-03 21:18:50.034 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-05-03 21:18:50.097 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-05-03 21:18:50.097 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2188 ms
+2022-05-03 21:18:50.328 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 21:18:50.358 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-05-03 21:18:50.462 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 21:18:50.506 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-05-03 21:18:50.714 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-05-03 21:18:50.723 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-03 21:18:51.646 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 21:18:51.652 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:18:52.466 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration 221 openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 21:18:53.031 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 181 initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:18:53.377 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:18:53.389 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 220 start - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 21:18:54.113 INFO  org.springframework.boot.StartupInfoLogger 61 logStarted - Started OnlineBookStoreApplication in 6.815 seconds (JVM running for 7.969)
+2022-05-03 21:19:10.744 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-03 21:19:10.745 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-05-03 21:19:10.751 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 6 ms
+2022-05-03 21:19:10.804 WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver 207 logException - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/xml;charset=UTF-8' not supported]
+2022-05-03 21:19:16.491 WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver 207 logException - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/xml;charset=UTF-8' not supported]
+2022-05-03 21:19:31.280 WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver 207 logException - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.bookstore.entity.Contract` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.bookstore.entity.Contract` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 2, column: 1]]
+2022-05-03 21:20:35.730 DEBUG com.bookstore.service.ContractService 20 saveOrUpdate - Contract(id=100, clientName=setClientName00001, contractNum=null, contractAt=null, contractAmount=null, projectName=null, description=null, createAt=null, updateAt=null)
+2022-05-03 21:21:48.018 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:21:48.037 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:21:48.102 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-05-03 21:21:48.121 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-05-03 21:21:56.828 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 62268 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-05-03 21:21:56.838 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-05-03 21:21:56.840 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-05-03 21:21:58.384 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 21:21:58.479 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 85 ms. Found 6 JPA repository interfaces.
+2022-05-03 21:21:59.314 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 21:21:59.327 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:21:59.328 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-05-03 21:21:59.329 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-05-03 21:21:59.405 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-05-03 21:21:59.405 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2486 ms
+2022-05-03 21:21:59.653 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 21:21:59.705 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-05-03 21:21:59.834 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 21:21:59.924 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-05-03 21:22:00.156 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-05-03 21:22:00.165 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-03 21:22:01.378 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 21:22:01.389 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:22:02.516 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration 221 openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 21:22:03.461 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 181 initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:22:04.391 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:22:04.424 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 220 start - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 21:22:05.661 INFO  org.springframework.boot.StartupInfoLogger 61 logStarted - Started OnlineBookStoreApplication in 9.424 seconds (JVM running for 10.635)
+2022-05-03 21:22:07.813 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-03 21:22:07.814 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-05-03 21:22:07.823 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 8 ms
+2022-05-03 21:22:07.996 DEBUG com.bookstore.service.ContractService 27 saveOrUpdate - Contract(id=100, clientName=null, contractNum=null, contractAt=null, contractAmount=null, projectName=null, description=世涛天朗、邑上苑热计量改造项目世涛天朗、邑上苑热计量改造项目, createAt=null, updateAt=null)
+2022-05-03 21:23:38.227 WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver 207 logException - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "12/08/2012": not a valid representation (error: Failed to parse Date value '12/08/2012': Cannot parse date "12/08/2012": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "12/08/2012": not a valid representation (error: Failed to parse Date value '12/08/2012': Cannot parse date "12/08/2012": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))
+ at [Source: (PushbackInputStream); line: 5, column: 20] (through reference chain: com.bookstore.entity.Contract["contractAt"])]
+2022-05-03 21:23:50.381 WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver 207 logException - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "12/08/2012": not a valid representation (error: Failed to parse Date value '12/08/2012': Cannot parse date "12/08/2012": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "12/08/2012": not a valid representation (error: Failed to parse Date value '12/08/2012': Cannot parse date "12/08/2012": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))
+ at [Source: (PushbackInputStream); line: 5, column: 20] (through reference chain: com.bookstore.entity.Contract["contractAt"])]
+2022-05-03 21:23:56.256 WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver 207 logException - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "12/08/2012": not a valid representation (error: Failed to parse Date value '12/08/2012': Cannot parse date "12/08/2012": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "12/08/2012": not a valid representation (error: Failed to parse Date value '12/08/2012': Cannot parse date "12/08/2012": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))
+ at [Source: (PushbackInputStream); line: 5, column: 20] (through reference chain: com.bookstore.entity.Contract["contractAt"])]
+2022-05-03 21:24:48.264 DEBUG com.bookstore.service.ContractService 27 saveOrUpdate - Contract(id=101, clientName=北京永安热力有限公司, contractNum=ZBS2021-001-006, contractAt=Sun Jan 01 08:00:00 CST 2012, contractAmount=6896830.00, projectName=世涛天朗、邑上苑热计量改造项目, description=世涛天朗、邑上苑热计量改造项目世涛天朗、邑上苑热计量改造项目, createAt=Sun Jan 01 08:00:00 CST 2012, updateAt=Sun Jan 01 08:00:00 CST 2012)
+2022-05-03 21:27:50.055 DEBUG com.bookstore.service.ContractService 27 saveOrUpdate - Contract(id=101, clientName=北京永安热力有限公司, contractNum=ZBS2021-001-006, contractAt=Sun Jan 01 08:00:00 CST 2012, contractAmount=6896830.00, projectName=世涛天朗、邑上苑热计量改造项目, description=世涛天朗、邑上苑热计量改造项目世涛天朗、邑上苑热计量改造项目, createAt=Sun Jan 01 08:00:00 CST 2012, updateAt=Sun Jan 01 08:00:00 CST 2012)
+2022-05-03 21:27:52.182 DEBUG com.bookstore.service.ContractService 27 saveOrUpdate - Contract(id=101, clientName=北京永安热力有限公司, contractNum=ZBS2021-001-006, contractAt=Sun Jan 01 08:00:00 CST 2012, contractAmount=6896830.00, projectName=世涛天朗、邑上苑热计量改造项目, description=世涛天朗、邑上苑热计量改造项目世涛天朗、邑上苑热计量改造项目, createAt=Sun Jan 01 08:00:00 CST 2012, updateAt=Sun Jan 01 08:00:00 CST 2012)
+2022-05-03 21:27:52.851 DEBUG com.bookstore.service.ContractService 27 saveOrUpdate - Contract(id=101, clientName=北京永安热力有限公司, contractNum=ZBS2021-001-006, contractAt=Sun Jan 01 08:00:00 CST 2012, contractAmount=6896830.00, projectName=世涛天朗、邑上苑热计量改造项目, description=世涛天朗、邑上苑热计量改造项目世涛天朗、邑上苑热计量改造项目, createAt=Sun Jan 01 08:00:00 CST 2012, updateAt=Sun Jan 01 08:00:00 CST 2012)
+2022-05-03 21:27:53.379 DEBUG com.bookstore.service.ContractService 27 saveOrUpdate - Contract(id=101, clientName=北京永安热力有限公司, contractNum=ZBS2021-001-006, contractAt=Sun Jan 01 08:00:00 CST 2012, contractAmount=6896830.00, projectName=世涛天朗、邑上苑热计量改造项目, description=世涛天朗、邑上苑热计量改造项目世涛天朗、邑上苑热计量改造项目, createAt=Sun Jan 01 08:00:00 CST 2012, updateAt=Sun Jan 01 08:00:00 CST 2012)
+2022-05-03 21:27:53.864 DEBUG com.bookstore.service.ContractService 27 saveOrUpdate - Contract(id=101, clientName=北京永安热力有限公司, contractNum=ZBS2021-001-006, contractAt=Sun Jan 01 08:00:00 CST 2012, contractAmount=6896830.00, projectName=世涛天朗、邑上苑热计量改造项目, description=世涛天朗、邑上苑热计量改造项目世涛天朗、邑上苑热计量改造项目, createAt=Sun Jan 01 08:00:00 CST 2012, updateAt=Sun Jan 01 08:00:00 CST 2012)
+2022-05-03 21:28:59.374 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:28:59.388 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:28:59.431 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-05-03 21:28:59.452 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-05-03 21:29:11.782 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 62415 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-05-03 21:29:11.793 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-05-03 21:29:11.794 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-05-03 21:29:13.187 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 21:29:13.286 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 88 ms. Found 6 JPA repository interfaces.
+2022-05-03 21:29:14.270 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 21:29:14.278 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:29:14.279 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-05-03 21:29:14.279 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-05-03 21:29:14.363 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-05-03 21:29:14.363 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2502 ms
+2022-05-03 21:29:14.620 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 21:29:14.650 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-05-03 21:29:14.726 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 21:29:14.786 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-05-03 21:29:15.141 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-05-03 21:29:15.155 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-03 21:29:16.115 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 21:29:16.129 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:29:17.157 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration 221 openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 21:29:17.790 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 181 initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:29:18.186 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:29:18.208 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 220 start - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 21:29:19.214 INFO  org.springframework.boot.StartupInfoLogger 61 logStarted - Started OnlineBookStoreApplication in 7.922 seconds (JVM running for 9.082)
+2022-05-03 21:30:21.780 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-03 21:30:21.786 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-05-03 21:30:21.807 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 20 ms
+2022-05-03 21:31:38.725 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:31:38.739 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:31:38.771 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-05-03 21:31:38.806 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
+2022-05-03 21:31:46.669 INFO  org.springframework.boot.StartupInfoLogger 55 logStarting - Starting OnlineBookStoreApplication using Java 11.0.5 on shizhongs-MacBook-Pro-2.local with PID 62545 (/Users/stephen/working/my/yantao/docker-bookstore/java-bookstore/build/classes/java/main started by stephen in /Users/stephen/working/my/yantao/docker-bookstore/java-bookstore)
+2022-05-03 21:31:46.686 DEBUG org.springframework.boot.StartupInfoLogger 56 logStarting - Running with Spring Boot v2.4.5, Spring v5.3.6
+2022-05-03 21:31:46.689 INFO  org.springframework.boot.SpringApplication 675 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-05-03 21:31:47.917 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 128 registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 21:31:48.009 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate 188 registerRepositoriesIn - Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+2022-05-03 21:31:48.736 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 108 initialize - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 21:31:48.742 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:31:48.743 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting service [Tomcat]
+2022-05-03 21:31:48.744 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-05-03 21:31:48.805 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring embedded WebApplicationContext
+2022-05-03 21:31:48.806 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext 289 prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2058 ms
+2022-05-03 21:31:49.034 INFO  org.hibernate.jpa.internal.util.LogHelper 31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 21:31:49.062 INFO  org.hibernate.Version 44 logVersion - HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-05-03 21:31:49.132 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 56 <clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 21:31:49.181 INFO  com.zaxxer.hikari.HikariDataSource 110 getConnection - HikariPool-1 - Starting...
+2022-05-03 21:31:49.401 INFO  com.zaxxer.hikari.HikariDataSource 123 getConnection - HikariPool-1 - Start completed.
+2022-05-03 21:31:49.409 INFO  org.hibernate.dialect.Dialect 175 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-03 21:31:50.188 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator 52 initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 21:31:50.195 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 437 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:31:51.037 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration 221 openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 21:31:51.629 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 181 initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:31:52.014 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 21:31:52.035 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer 220 start - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 21:31:52.822 INFO  org.springframework.boot.StartupInfoLogger 61 logStarted - Started OnlineBookStoreApplication in 6.687 seconds (JVM running for 7.763)
+2022-05-03 21:32:01.257 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-03 21:32:01.258 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-05-03 21:32:01.275 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 17 ms
+2022-05-03 21:33:49.635 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-03 21:33:49.646 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 21:33:49.679 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-05-03 21:33:49.734 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.

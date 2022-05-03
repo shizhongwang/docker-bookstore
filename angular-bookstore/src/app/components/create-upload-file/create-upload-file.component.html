@@ -5,34 +5,9 @@
 </div>
 <br /><br />
 
-<div style="margin-bottom: 5px; min-height: 30px;">
-  <button (click)="onRowDataA()">Row Data A</button>
-  <button (click)="onRowDataB()">Row Data B</button>
-  <input type="button" value="遍历行" onclick="getSelectedRows()" />
-</div>
-
-
-<ag-grid-angular
-    style="width: 800px; height: 155px; margin: auto"
-    class="ag-theme-alpine"
-    [rowData]="rowData | async"
-    [columnDefs]="columnDefs"
-    rowSelection="multiple"
-    (gridReady)="onGridReady($event)"
-    (rowSelected)="onRowSelected($event)"
-    >
-</ag-grid-angular>
-
-  <!-- <ag-grid-angular
-    style="width: 500px; height: 500px;"
-    class="ag-theme-alpine"
-    [rowData]="rowData | async"
-    [columnDefs]="columnDefs" >
-  </ag-grid-angular> -->
+<app-file-review-contract></app-file-review-contract>
 
 <label class="btn btn-default">
-  <input type="file" (change)="selectFile($event)">
-
   <input type="file" (change)="onFileChange($event)" />
 
   <div id="output"></div>
