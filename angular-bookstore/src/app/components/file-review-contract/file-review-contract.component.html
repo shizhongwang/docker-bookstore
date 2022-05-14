@@ -1,13 +1,9 @@
-<p>file-review-contract works!</p>
-
 <div style="margin-bottom: 5px; min-height: 30px;">
-    <button (click)="onRowDataA()">refresh data</button>
-    <button (click)="getSelectedRows()">选择行</button>
-  </div>
+    <button (click)="updateDbSelectedRows()">根据选择行更新数据库</button>
+</div>
 
 <div id="app">
-    <ag-grid-angular
-    style="width: 800px; height: 600px; margin: auto"
+    <ag-grid-angular style="width: 800px; height: 600px; margin: auto"
     class="ag-theme-alpine"
     [columnDefs]="columnDefs"
     [autoGroupColumnDef]="autoGroupColumnDef"
@@ -19,11 +15,13 @@
     [pivotPanelShow]="pivotPanelShow"
     [enableRangeSelection]="true"
     [pagination]="true"
-    [rowData]="rowData"
-    (gridReady)="onGridReady($event)"
-  ></ag-grid-angular>
+    [rowData]="rowData" (gridReady)="onGridReady($event)"></ag-grid-angular>
 </div>
-<script>document.write('<base href="' + document.location + '" />');</script>
+
+
+<script>
+    document.write('<base href="' + document.location + '" />');
+</script>
 <script src="https://unpkg.com/core-js-bundle@3.6.5/minified.js">
 </script>
 <script src="https://unpkg.com/zone.js@0.11.2/dist/zone.min.js">
@@ -67,5 +65,8 @@
 </script>
 <script src="systemjs.config.js">
 </script>
-<script>System.import('main.ts').catch(function(err) { console.error(err); });</script>
-
+<script>
+    System.import('main.ts').catch(function(err) {
+        console.error(err);
+    });
+</script>

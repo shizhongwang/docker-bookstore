@@ -1,5 +1,5 @@
 import { UploadFileService } from '../../services/upload-file.service';
-import { Component, OnInit, AfterViewInit, ViewChild  } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpResponse, HttpEventType } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
@@ -26,16 +26,11 @@ export class CreateUploadFileComponent implements OnInit {
     private http: HttpClient) {
 
 
-      // this.rowData = this.http.get<any[]>('https://www.ag-grid.com/example-assets/small-row-data.json');
-    }
+    // this.rowData = this.http.get<any[]>('https://www.ag-grid.com/example-assets/small-row-data.json');
+  }
 
   ngOnInit() {
   }
-
-
-
-
-
 
 
 

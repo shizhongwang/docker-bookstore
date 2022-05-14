@@ -6,6 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import static cn.hutool.core.date.DateTime.now;
+
 @Service
 public class ContractService {
 
@@ -26,7 +28,18 @@ public class ContractService {
     public Contract saveOrUpdate(Contract contract) {
         LogManager.getLogger().debug(contract);
 
+        contract.setUpdateAt(now());
         contractStatementRepository.save(contract);
         return contract;
+    }
+
+    public Contract[] saveOrUpdateBatch(Contract[] contracts) {
+        LogManager.getLogger().debug(contracts);
+
+        for (Contract contract : contracts) {
+            contract.setUpdateAt(now());
+            contractStatementRepository.save(contract);
+        }
+        return contracts;
     }
 }

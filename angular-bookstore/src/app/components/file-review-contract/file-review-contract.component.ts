@@ -10,6 +10,11 @@ import {
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-enterprise';
+import * as angular from "angular"
+import { Contract } from 'src/app/common/contract';
+
+import { ContractService } from '../../services/contract.service';
+
 
 @Component({
   selector: 'app-file-review-contract',
@@ -30,17 +35,24 @@ import 'ag-grid-enterprise';
 export class FileReviewContractComponent {
   public columnDefs: ColDef[] = [
     {
-      headerName: 'ID',       field: 'id',
+      headerName: 'ID', field: 'id',
       minWidth: 30,
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },
-    { headerName: '客户',      field: 'client_name' },
-    { headerName: '合同编号',   field: 'contract_num' },
-    { headerName: '合同日期',   field: 'contract_at' },
-    { headerName: '应收账款',   field: 'contract_amount' },
-    { headerName: '项目名称',   field: 'project_name' },
-    { headerName: '备注',       field: 'desc' },
+    { headerName: '客户', field: 'clientName' },
+    { headerName: '合同编号', field: 'contractNum' },
+    { headerName: '合同日期', field: 'contractAt' },
+    {
+      headerName: '应收账款',
+      field: 'contractAmount',
+      valueFormatter: "'$' + value.toLocaleString()",
+      width: 200,
+    },
+    { headerName: '项目名称', field: 'projectName' },
+    { headerName: '备注', field: 'description' },
+    { headerName: '创建时间', field: 'createAt' },
+    { headerName: '更新时间', field: 'updateAt' },
   ];
   public autoGroupColumnDef: ColDef = {
     headerName: 'Group',
@@ -66,6 +78,8 @@ export class FileReviewContractComponent {
     enableValue: true,
     sortable: true,
     resizable: true,
+    suppressSizeToFit: true,
+
     filter: true,
     flex: 1,
     minWidth: 100,
@@ -79,33 +93,32 @@ export class FileReviewContractComponent {
   private gridColumnApi;
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private contractService: ContractService) { }
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
-    // this.http
-    //   .get<any[]>(
-    //     "https://www.ag-grid.com/example-assets/olympic-winners.json"
-    //   )
-    //   .subscribe(data => {
-    //     this.rowData = data;
-    //     // this.gridApi.setRowData(this.rowData);
-    //     params.api!.setRowData(data);
-    //   });
+    this.refreshGridData();
   }
 
-  onRowDataA() {
-    this.gridApi.setRowData(this.rowData);
+  updateDbSelectedRows() {
+    var rows = <Contract[]>this.gridApi.getSelectedRows();
+
+    this.contractService.createContracts(rows).subscribe(data => {
+      console.log(data);
+    })
+    alert('Update DB successfully.');
+
+    this.refreshGridData();
   }
 
-  //获取选中行数据
-  getSelectedRows() {
-    var rows = this.gridApi.getSelectedRows();
-    alert(JSON.stringify(rows));
+  refreshGridData() {
+    this.contractService.getContracts().subscribe(
+      data => this.gridApi.setRowData(data)
+    );
   }
-
 }
 
 var checkboxSelection = function (params: CheckboxSelectionCallbackParams) {

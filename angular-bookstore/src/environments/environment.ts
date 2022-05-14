@@ -3,7 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  /**
+   * below is for PROF
+   */
+  // urlContracts: "http://49.7.182.249:9200/contracts",
+  // urlBooks: "http://49.7.182.249:9200/books",
+  // urlCategory: "http://49.7.182.249:9200/book-category",
+
+  /**
+   * below is for local
+  */
+  urlContracts: "http://localhost:8080/contracts",
+  urlBooks: "http://localhost:8080/books",
+  urlCategory: "http://localhost:8080/book-category",
+
 };
 
 /*

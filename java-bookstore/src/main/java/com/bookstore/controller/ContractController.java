@@ -1,5 +1,6 @@
 package com.bookstore.controller;
 
+import com.bookstore.entity.Book;
 import com.bookstore.entity.Contract;
 import com.bookstore.repository.ContractRepository;
 import com.bookstore.service.ContractService;
@@ -21,14 +22,22 @@ public class ContractController {
     @Autowired
     private ContractService contractService;
 
-//    @PostMapping("/contract")
-//    public Contract createContract() {
-//        return contractService.saveOrUpdate();
-//    }
+    @Autowired
+    private ContractRepository contractRepository;
+
+    @GetMapping("/contracts")
+    public List<Contract> getAllContracts() {
+        return contractRepository.findAll();
+    }
+
 
     @PostMapping("/contract")
     public Contract createContract(@RequestBody Contract contract) {
-        System.out.println(contract);
         return contractService.saveOrUpdate(contract);
+    }
+
+    @PostMapping("/contracts")
+    public Contract[] createContracts(@RequestBody Contract[] contracts) {
+        return contractService.saveOrUpdateBatch(contracts);
     }
 }

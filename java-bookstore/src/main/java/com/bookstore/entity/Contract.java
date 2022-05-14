@@ -1,7 +1,9 @@
 package com.bookstore.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -18,6 +20,9 @@ public class Contract {
 
     private String clientName;
     private String contractNum;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy")         //to accept the json string format
     private Date contractAt;
     private BigDecimal contractAmount;
     private String projectName;

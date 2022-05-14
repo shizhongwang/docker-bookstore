@@ -1,31 +1,29 @@
 <div *ngIf="currentFile" class="progress">
-  <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
-    aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
-    {{progress.percentage}}%</div>
+    <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" attr.aria-valuenow="{{progress.percentage}}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+        {{progress.percentage}}%</div>
 </div>
-<br /><br />
+
+<input type="file" (change)="onFileChange($event)" />
 
 <app-file-review-contract></app-file-review-contract>
 
 <label class="btn btn-default">
-  <input type="file" (change)="onFileChange($event)" />
-
-  <div id="output"></div>
-  <br>
   <div *ngIf="willDownload">
     <a id="download"> Download JSON File </a>
-  </div>
 
+  </div>
+  <div id="output"></div>
 </label>
+
 <br /><br />
-<button class="btn btn-primary btn-lg active" [disabled]="!selectedFiles" (click)="uploadFile()">Upload File</button>
+<button class="btn btn-primary btn-lg active" [disabled]="!selectedFiles" (click)="uploadFile()">Upload File and save to server</button>
 
 
 <div class="container" style="width:400px">
-  <div style="color: green; margin-bottom: 20px">
-    <h1>File Upload Demo</h1>
-  </div>
+    <div style="color: green; margin-bottom: 20px">
+        <h1>File Upload Demo</h1>
+    </div>
 
-  <br />
-  <app-list-upload-file></app-list-upload-file>
+    <br />
+    <app-list-upload-file></app-list-upload-file>
 </div>
