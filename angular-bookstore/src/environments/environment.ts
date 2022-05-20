@@ -7,20 +7,20 @@ export const environment = {
   /**
    * below is for PROF
    */
-  // urlContracts: "http://49.7.182.249:9200/contracts",
-  // urlContractStatements: "http://49.7.182.249:9200/contractStatements",
-  // urlContractIInvoices: "http://49.7.182.249:9200/contractInvoices",
-  // urlBooks: "http://49.7.182.249:9200/books",
-  // urlCategory: "http://49.7.182.249:9200/book-category",
+  urlContracts: "http://49.7.182.249:9200/contracts",
+  urlContractStatements: "http://49.7.182.249:9200/contractStatements",
+  urlContractInvoices: "http://49.7.182.249:9200/contractInvoices",
+  urlBooks: "http://49.7.182.249:9200/books",
+  urlCategory: "http://49.7.182.249:9200/book-category",
 
   /**
    * below is for local
   */
-  urlContracts: "http://localhost:8080/contracts",
-  urlContractStatements: "http://localhost:8080/contractStatements",
-  urlContractInvoices: "http://localhost:8080/contractInvoices",
-  urlBooks: "http://localhost:8080/books",
-  urlCategory: "http://localhost:8080/book-category",
+  // urlContracts: "http://localhost:8080/contracts",
+  // urlContractStatements: "http://localhost:8080/contractStatements",
+  // urlContractInvoices: "http://localhost:8080/contractInvoices",
+  // urlBooks: "http://localhost:8080/books",
+  // urlCategory: "http://localhost:8080/book-category",
 
 };
 

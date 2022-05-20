@@ -11,22 +11,22 @@ import java.util.Date;
 @Data
 @ToString
 public class ContractStatement {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  private Date transactionAt;
-  private String voucherNum;
-  private double debitAmount;
-  private double creditAmount;
-  private double remainingBalance;
-  private String bankSerialId;
-  private String oppositeAccountNum;
-  private String oppositeCompanyName;
-  private String category;
-  private String invoiceNum;
-  private String description;
-  private Date createAt;
-  private Date updateAt;
+    private Date transactionAt;
+    private String voucherNum;
+    private double debitAmount;
+    private double creditAmount;
+    private double remainingBalance;
+    private String bankSerialId;
+    private String oppositeAccountNum;
+    private String oppositeCompanyName;
+    private String category;
+    private String invoiceNum;
+    private String description;
+    private Date createAt;
+    private Date updateAt;
 
 }

@@ -25,7 +25,7 @@ export class FileReviewContractStatementComponent {
   public columnDefs: ColDef[] = [
     {
       headerName: 'ID', field: 'id',
-      minWidth: 30,
+      // minWidth: 30,
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },

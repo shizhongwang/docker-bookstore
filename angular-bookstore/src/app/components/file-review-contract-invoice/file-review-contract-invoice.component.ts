@@ -49,7 +49,7 @@ export class FileReviewContractInvoiceComponent {
   public columnDefs: ColDef[] = [
     {
       headerName: 'ID', field: 'id',
-      minWidth: 30,
+      // minWidth: 30,
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },
@@ -122,7 +122,7 @@ export class FileReviewContractInvoiceComponent {
 
 
   constructor(private http: HttpClient,
-    private ContractInvoiceService: ContractInvoiceService) { }
+    private contractInvoiceService: ContractInvoiceService) { }
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
@@ -134,7 +134,7 @@ export class FileReviewContractInvoiceComponent {
   updateDbSelectedRows() {
     var rows = <ContractInvoice[]>this.gridApi.getSelectedRows();
 
-    this.ContractInvoiceService.createContractInvoices(rows).subscribe(data => {
+    this.contractInvoiceService.createContractInvoices(rows).subscribe(data => {
       console.log(data);
     })
     alert('Update DB successfully.');
@@ -143,7 +143,7 @@ export class FileReviewContractInvoiceComponent {
   }
 
   refreshGridData() {
-    this.ContractInvoiceService.getContractInvoices().subscribe(
+    this.contractInvoiceService.getContractInvoices().subscribe(
       data => this.gridApi.setRowData(data)
     );
   }
