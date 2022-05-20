@@ -1,6 +1,7 @@
 package com.bookstore.repository;
 
 import com.bookstore.entity.Contract;
+import com.bookstore.entity.ContractInvoice;
 import com.bookstore.entity.ContractStatement;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,7 +11,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 @RepositoryRestResource
-public interface ContractStatementRepository extends JpaRepository<ContractStatement, Long> {
+public interface ContractInvoiceRepository extends JpaRepository<ContractInvoice, Long> {
     @RestResource(path = "searchbykeyword")
-    Page<ContractStatement> findByOppositeCompanyNameContaining(@Param("oppositeCompanyName") String keyword, Pageable pageable);
+    Page<ContractInvoice> findByContractNumContaining(@Param("contractNum") String keyword, Pageable pageable);
 }

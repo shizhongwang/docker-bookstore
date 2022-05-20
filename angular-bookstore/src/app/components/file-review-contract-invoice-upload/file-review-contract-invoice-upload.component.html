@@ -1,0 +1,10 @@
+<div *ngIf="currentFile" class="progress">
+    <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" attr.aria-valuenow="{{progress.percentage}}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+        {{progress.percentage}}%</div>
+</div>
+
+<input type="file" (change)="onFileChange($event)" />
+
+<div class="container" style="width:100%">
+  <app-file-review-contract-invoice></app-file-review-contract-invoice>
+</div>

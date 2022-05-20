@@ -29,10 +29,18 @@ import { DetailsUploadFileComponent } from './components/details-upload-file/det
 import { AgGridModule } from 'ag-grid-angular';
 import { FileReviewGridComponent } from './components/file-review-grid/file-review-grid.component';
 import { FileReviewContractComponent } from './components/file-review-contract/file-review-contract.component';
+import { FileReviewContractStatementComponent } from './components/file-review-contract-statement/file-review-contract-statement.component';
+import { FileReviewContractStatementUploadComponent } from './components/file-review-contract-statement-upload/file-review-contract-statement-upload.component';
+
+import { FileReviewContractInvoiceComponent } from './components/file-review-contract-invoice/file-review-contract-invoice.component';
+import { FileReviewContractInvoiceUploadComponent } from './components/file-review-contract-invoice-upload/file-review-contract-invoice-upload.component';
+
 
 
 const routes: Routes = [
   {path: 'create-upload-files', component: CreateUploadFileComponent},
+  { path: 'contract-statement-upload', component: FileReviewContractStatementUploadComponent },
+  { path: 'contract-invoice-upload', component: FileReviewContractInvoiceUploadComponent },
   {path: 'file-review-grid', component: FileReviewGridComponent},
   {path: 'file-review-contract', component: FileReviewContractComponent},
 
@@ -43,7 +51,8 @@ const routes: Routes = [
   {path: 'book-create-form', component: BookCreateFormComponent},
   {path: 'search/:keyword', component: BookListComponent},
   {path: 'category/:id', component: BookListComponent},
-  {path: '', redirectTo: '/books', pathMatch: 'full'},
+  // {path: '', redirectTo: '/books', pathMatch: 'full'},
+  { path: '', redirectTo: '/create-upload-files', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent}
 ];
 
@@ -65,7 +74,12 @@ const routes: Routes = [
     ListUploadFileComponent,
     DetailsUploadFileComponent,
     FileReviewGridComponent,
-    FileReviewContractComponent
+    FileReviewContractComponent,
+    FileReviewContractStatementComponent,
+    FileReviewContractStatementUploadComponent,
+
+    FileReviewContractInvoiceComponent,
+    FileReviewContractInvoiceUploadComponent
     //client side paging
     //JwPaginationComponent
   ],

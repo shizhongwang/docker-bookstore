@@ -18,9 +18,9 @@ export class SearchComponent implements OnInit {
     this._router.navigateByUrl('/search/'+keyword);
   }
 
-  callBookCreateForm(){
-    this._router.navigateByUrl('book-create-form');
-  }
+  // callBookCreateForm(){
+  //   this._router.navigateByUrl('book-create-form');
+  // }
 
   callCreateUploadFilesForm(){
     this._router.navigateByUrl('create-upload-files');
@@ -29,4 +29,13 @@ export class SearchComponent implements OnInit {
   callFileReviewGridForm(){
     this._router.navigateByUrl('file-review-grid');
   }
+
+  callStatementForm() {
+    this._router.navigateByUrl('contract-statement-upload');
+  }
+
+  callInvoiceForm() {
+    this._router.navigateByUrl('contract-invoice-upload');
+  }
+
 }
