@@ -16,11 +16,11 @@ import { ContractStatement } from 'src/app/common/contract-statement';
 import { ContractStatementService } from '../../services/contract-statement.service';
 
 @Component({
-  selector: 'app-file-review-contract-statement',
-  templateUrl: './file-review-contract-statement.component.html',
-  styleUrls: ['./file-review-contract-statement.component.css']
+  selector: 'app-contract-statement',
+  templateUrl: './contract-statement.component.html',
+  styleUrls: ['./contract-statement.component.css']
 })
-export class FileReviewContractStatementComponent {
+export class ContractStatementComponent {
 
   public columnDefs: ColDef[] = [
     {

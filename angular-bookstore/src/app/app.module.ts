@@ -20,7 +20,6 @@ import { BookCreateDetailsComponent } from './components/book-create-details/boo
 import { BookCreateFormComponent } from './components/book-create-form/book-create-form.component';
 
 import { UploadFileService } from './services/upload-file.service';
-import { CreateUploadFileComponent } from './components/create-upload-file/create-upload-file.component';
 import { ListUploadFileComponent } from './components/list-upload-file/list-upload-file.component';
 import { DetailsUploadFileComponent } from './components/details-upload-file/details-upload-file.component';
 //client side paging
@@ -28,21 +27,22 @@ import { DetailsUploadFileComponent } from './components/details-upload-file/det
 
 import { AgGridModule } from 'ag-grid-angular';
 import { FileReviewGridComponent } from './components/file-review-grid/file-review-grid.component';
-import { FileReviewContractComponent } from './components/file-review-contract/file-review-contract.component';
-import { FileReviewContractStatementComponent } from './components/file-review-contract-statement/file-review-contract-statement.component';
-import { FileReviewContractStatementUploadComponent } from './components/file-review-contract-statement-upload/file-review-contract-statement-upload.component';
 
-import { FileReviewContractInvoiceComponent } from './components/file-review-contract-invoice/file-review-contract-invoice.component';
-import { FileReviewContractInvoiceUploadComponent } from './components/file-review-contract-invoice-upload/file-review-contract-invoice-upload.component';
+
+import { ContractComponent } from './components/contract/contract.component';
+import { ContractUploadComponent } from './components/contract-upload/contract-upload.component';
+import { ContractInvoiceComponent } from './components/contract-invoice/contract-invoice.component';
+import { ContractInvoiceUploadComponent } from './components/contract-invoice-upload/contract-invoice-upload.component';
+import { ContractStatementComponent } from './components/contract-statement/contract-statement.component';
+import { ContractStatementUploadComponent } from './components/contract-statement-upload/contract-statement-upload.component';
 
 
 
 const routes: Routes = [
-  {path: 'create-upload-files', component: CreateUploadFileComponent},
-  { path: 'contract-statement-upload', component: FileReviewContractStatementUploadComponent },
-  { path: 'contract-invoice-upload', component: FileReviewContractInvoiceUploadComponent },
+  { path: 'contract', component: ContractUploadComponent},
+  { path: 'contract-statement-upload', component: ContractStatementUploadComponent },
+  { path: 'contract-invoice-upload', component: ContractInvoiceUploadComponent },
   {path: 'file-review-grid', component: FileReviewGridComponent},
-  {path: 'file-review-contract', component: FileReviewContractComponent},
 
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
@@ -70,16 +70,17 @@ const routes: Routes = [
     BookCreateDetailsComponent,
     BookCreateFormComponent,
 
-    CreateUploadFileComponent,
     ListUploadFileComponent,
     DetailsUploadFileComponent,
     FileReviewGridComponent,
-    FileReviewContractComponent,
-    FileReviewContractStatementComponent,
-    FileReviewContractStatementUploadComponent,
 
-    FileReviewContractInvoiceComponent,
-    FileReviewContractInvoiceUploadComponent
+
+    ContractComponent,
+    ContractUploadComponent,
+    ContractInvoiceComponent,
+    ContractInvoiceUploadComponent,
+    ContractStatementComponent,
+    ContractStatementUploadComponent
     //client side paging
     //JwPaginationComponent
   ],

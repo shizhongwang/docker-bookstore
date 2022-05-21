@@ -4,17 +4,15 @@ import { HttpClient, HttpResponse, HttpEventType } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import * as XLSX from 'xlsx';
-import { FileReviewContractComponent } from '../file-review-contract/file-review-contract.component';
-
+import { ContractStatementComponent } from '../contract-statement/contract-statement.component';
 
 @Component({
-  selector: 'app-create-upload-file',
-  templateUrl: './create-upload-file.component.html',
-  styleUrls: ['./create-upload-file.component.css']
+  selector: 'app-contract-statement-upload',
+  templateUrl: './contract-statement-upload.component.html',
+  styleUrls: ['./contract-statement-upload.component.css']
 })
-
-export class CreateUploadFileComponent implements OnInit {
-  @ViewChild(FileReviewContractComponent, { static: true }) fileReviewComponent!: FileReviewContractComponent
+export class ContractStatementUploadComponent implements OnInit {
+  @ViewChild(ContractStatementComponent, { static: true }) fileReviewComponent!: ContractStatementComponent
 
   selectedFiles: FileList;
   currentFile: File;

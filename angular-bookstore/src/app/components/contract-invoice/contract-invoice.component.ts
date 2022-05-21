@@ -11,45 +11,73 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-enterprise';
 import * as angular from "angular"
-import { Contract } from 'src/app/common/contract';
+import { ContractInvoice } from 'src/app/common/contract-invoice';
 
-import { ContractService } from '../../services/contract.service';
-
+import { ContractInvoiceService } from '../../services/contract-invoice.service';
 
 @Component({
-  selector: 'app-file-review-contract',
-  templateUrl: './file-review-contract.component.html',
-  styleUrls: ['./file-review-contract.component.css']
+  selector: 'app-contract-invoice',
+  templateUrl: './contract-invoice.component.html',
+  styleUrls: ['./contract-invoice.component.css']
 })
+export class ContractInvoiceComponent {
+  // id: number;
+  // contractNum: string;
 
-// `id`             BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-// `client_name`           VARCHAR(255)   DEFAULT NULL,
-// `contract_num`    VARCHAR(255)   DEFAULT NULL,
-// `contract_at`      DATETIME       DEFAULT NULL,
-// `contract_amount`         DECIMAL(13, 2) DEFAULT NULL,
-// `project_name`    VARCHAR(255)   DEFAULT NULL,
+  // invoiceCategory: string;
+  // invoiceId: string;
+  // invoiceNum: string;
+  // clientName: string;
 
-// `desc`    VARCHAR(10240)   DEFAULT NULL,
-//客户	扫描件	应收账款	合同编号	合同日期	项目名称	合同金额
+  // productCategory: string;
+  // productName: string;
+  // productModel: string;
+  // productUnit: string;
+  // productCount: number;
 
-export class FileReviewContractComponent {
+  // amount: number;
+  // tax: number;
+  // sum: number;
+
+  // invoiceSum: number;
+  // invoiceAt: Date;
+
+  // description: string;
+  // createAt: Date;
+  // updateAt: Date;
+
   public columnDefs: ColDef[] = [
     {
       headerName: 'ID', field: 'id',
-      minWidth: 30,
+      // minWidth: 30,
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },
-    { headerName: '客户', field: 'clientName' },
     { headerName: '合同编号', field: 'contractNum' },
-    { headerName: '合同日期', field: 'contractAt' },
-    {
-      headerName: '应收账款',
-      field: 'contractAmount',
-      valueFormatter: "'$' + value.toLocaleString()",
-      width: 200,
-    },
-    { headerName: '项目名称', field: 'projectName' },
+
+    { headerName: '发票代码', field: 'invoiceCategory' },
+    { headerName: '发票号码', field: 'invoiceId' },
+    { headerName: '发票金额', field: 'invoiceNum' },
+    { headerName: '客户', field: 'clientName' },
+
+    { headerName: '商品类别', field: 'productCategory' },
+    { headerName: '商品名称', field: 'productName' },
+    { headerName: '规格型号', field: 'productModel' },
+    { headerName: '单位', field: 'productUnit' },
+    { headerName: '数量', field: 'productCount' },
+
+    { headerName: '金额', field: 'amount' },
+    { headerName: '税额', field: 'tax' },
+    { headerName: '合计金额', field: 'sum' },
+    { headerName: '总合计', field: 'invoiceSum' },
+    { headerName: '开票日期', field: 'invoiceAt' },
+
+    // {
+    //   headerName: '应收账款',
+    //   field: 'contractAmount',
+    //   valueFormatter: "'$' + value.toLocaleString()",
+    //   width: 200,
+    // },
     { headerName: '备注', field: 'description' },
     { headerName: '创建时间', field: 'createAt' },
     { headerName: '更新时间', field: 'updateAt' },
@@ -94,7 +122,7 @@ export class FileReviewContractComponent {
 
 
   constructor(private http: HttpClient,
-    private contractService: ContractService) { }
+    private contractInvoiceService: ContractInvoiceService) { }
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
@@ -104,9 +132,9 @@ export class FileReviewContractComponent {
   }
 
   updateDbSelectedRows() {
-    var rows = <Contract[]>this.gridApi.getSelectedRows();
+    var rows = <ContractInvoice[]>this.gridApi.getSelectedRows();
 
-    this.contractService.createContracts(rows).subscribe(data => {
+    this.contractInvoiceService.createContractInvoices(rows).subscribe(data => {
       console.log(data);
     })
     alert('Update DB successfully.');
@@ -115,7 +143,7 @@ export class FileReviewContractComponent {
   }
 
   refreshGridData() {
-    this.contractService.getContracts().subscribe(
+    this.contractInvoiceService.getContractInvoices().subscribe(
       data => this.gridApi.setRowData(data)
     );
   }

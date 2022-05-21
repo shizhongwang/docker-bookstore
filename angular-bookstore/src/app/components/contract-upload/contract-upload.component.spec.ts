@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FileReviewContractComponent } from './file-review-contract.component';
+import { ContractUploadComponent } from './contract-upload.component';
 
-describe('FileReviewContractComponent', () => {
-  let component: FileReviewContractComponent;
-  let fixture: ComponentFixture<FileReviewContractComponent>;
+describe('ContractUploadComponent', () => {
+  let component: ContractUploadComponent;
+  let fixture: ComponentFixture<ContractUploadComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FileReviewContractComponent ]
+      declarations: [ ContractUploadComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FileReviewContractComponent);
+    fixture = TestBed.createComponent(ContractUploadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
