@@ -17,6 +17,7 @@
 
 export class ContractStatement {
     id: number;
+    contractNum: string;
     transactionAt: Date;
     voucherNum: string;
     debitAmount: number;

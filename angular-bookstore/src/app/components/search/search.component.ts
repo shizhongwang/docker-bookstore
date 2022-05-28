@@ -22,12 +22,14 @@ export class SearchComponent implements OnInit {
   //   this._router.navigateByUrl('book-create-form');
   // }
 
-  callContractForm(){
-    this._router.navigateByUrl('contract');
-  }
-
   callFileReviewGridForm(){
     this._router.navigateByUrl('file-review-grid');
+  }
+
+
+
+  callContractForm() {
+    this._router.navigateByUrl('contract');
   }
 
   callStatementForm() {

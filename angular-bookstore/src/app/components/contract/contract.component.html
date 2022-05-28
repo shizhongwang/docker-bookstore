@@ -1,21 +1,33 @@
 <div style="margin-bottom: 5px; min-height: 30px;">
-    <h5>合同表 <button (click)="updateDbSelectedRows()">根据选择行更新数据库</button> </h5>
+    <h5>合同表
+        <button type="submit" (click)="updateDbSelectedRows()" class="btn btn-danger ml-2">根据选择行更新数据库</button>
+        <button type="submit" (click)="filterReset()" class="btn btn-success ml-2">清除过滤条件</button>
+    </h5>
 </div>
 
 <div id="app" style="height: 100%">
     <ag-grid-angular style="width: 1000px; height: 600px; margin: auto"
-    class="ag-theme-alpine"
-    [columnDefs]="columnDefs"
-    [autoGroupColumnDef]="autoGroupColumnDef"
-    [defaultColDef]="defaultColDef"
-    [suppressRowClickSelection]="true"
-    [groupSelectsChildren]="true"
-    [rowSelection]="rowSelection"
-    [rowGroupPanelShow]="rowGroupPanelShow"
-    [pivotPanelShow]="pivotPanelShow"
-    [enableRangeSelection]="true"
-    [pagination]="true"
-    [rowData]="rowData" (gridReady)="onGridReady($event)"></ag-grid-angular>
+        class="ag-theme-alpine"
+        [columnDefs]="columnDefs"
+        [autoGroupColumnDef]="autoGroupColumnDef"
+        [defaultColDef]="defaultColDef"
+        [suppressRowClickSelection]="true"
+        [groupSelectsChildren]="true"
+        [rowSelection]="rowSelection"
+        [rowGroupPanelShow]="rowGroupPanelShow"
+        [pivotPanelShow]="pivotPanelShow"
+        [enableRangeSelection]="true"
+        [pagination]="true"
+        [enableBrowserTooltips]="true"
+
+        [groupIncludeFooter]="true"
+        [groupIncludeTotalFooter]="true"
+        [animateRows]="true"
+        [sideBar]="true"
+
+
+        [rowData]="rowData" (gridReady)="onGridReady($event)" (selectionChanged)="onSelectionChanged($event)" >
+    </ag-grid-angular>
 </div>
 
 

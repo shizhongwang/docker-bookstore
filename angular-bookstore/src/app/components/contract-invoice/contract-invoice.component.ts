@@ -13,6 +13,7 @@ import 'ag-grid-enterprise';
 import * as angular from "angular"
 import { ContractInvoice } from 'src/app/common/contract-invoice';
 
+import { ContractService } from 'src/app/services/contract.service';
 import { ContractInvoiceService } from '../../services/contract-invoice.service';
 
 @Component({
@@ -122,13 +123,31 @@ export class ContractInvoiceComponent {
 
 
   constructor(private http: HttpClient,
-    private contractInvoiceService: ContractInvoiceService) { }
+    private contractInvoiceService: ContractInvoiceService,
+    private contractService: ContractService) { }
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
     this.refreshGridData();
+
+    //check the id in contract service
+    console.log(this.contractService.contractNum);
+  }
+
+  filterContractNum() {
+    if (this.contractService.contractNum == null) {
+      this.gridApi.setFilterModel(null);
+    }
+    else {
+      this.gridApi.setFilterModel({
+        contractNum: {
+          type: 'set',
+          values: [this.contractService.contractNum],
+        },
+      });
+    }
   }
 
   updateDbSelectedRows() {
@@ -144,7 +163,10 @@ export class ContractInvoiceComponent {
 
   refreshGridData() {
     this.contractInvoiceService.getContractInvoices().subscribe(
-      data => this.gridApi.setRowData(data)
+      data => {
+        this.gridApi.setRowData(data);
+        this.filterContractNum();
+      }
     );
   }
 }

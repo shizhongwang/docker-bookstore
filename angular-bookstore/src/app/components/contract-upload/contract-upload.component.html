@@ -3,7 +3,16 @@
         {{progress.percentage}}%</div>
 </div>
 
-<input type="file" (change)="onFileChange($event)" />
+<div class="col-sm-3">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="请选择文件" />
+        <span class="input-group-btn">
+            <label for="forexIO_file" class="form-control btn btn-success">上传</label>
+            <input id="forexIO_file" type="file" (change)="onFileChange($event)" style="display: none" />
+        </span>
+    </div>
+    <!-- /input-group -->
+</div>
 
 <div class="container" style="width:100%">
   <app-contract></app-contract>

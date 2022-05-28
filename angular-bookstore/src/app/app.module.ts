@@ -42,6 +42,7 @@ const routes: Routes = [
   { path: 'contract', component: ContractUploadComponent},
   { path: 'contract-statement-upload', component: ContractStatementUploadComponent },
   { path: 'contract-invoice-upload', component: ContractInvoiceUploadComponent },
+
   {path: 'file-review-grid', component: FileReviewGridComponent},
 
   {path: 'checkout', component: CheckoutComponent},
@@ -52,7 +53,7 @@ const routes: Routes = [
   {path: 'search/:keyword', component: BookListComponent},
   {path: 'category/:id', component: BookListComponent},
   // {path: '', redirectTo: '/books', pathMatch: 'full'},
-  { path: '', redirectTo: '/create-upload-files', pathMatch: 'full' },
+  { path: '', redirectTo: '/contract', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent}
 ];
 

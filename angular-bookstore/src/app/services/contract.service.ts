@@ -12,15 +12,16 @@ import { environment } from '../../environments/environment';
 
 export class ContractService {
   private urlContracts = environment.urlContracts;
-  bookString: string;
+  contractNum: string;
+  rowData!: any[];
 
   constructor(private httpClient: HttpClient) {
   }
 
   createContracts(contracts: Contract[]): Observable<Contract[]> {
-    this.bookString = JSON.stringify(contracts);
+    var contractStr = JSON.stringify(contracts);
 
-    return this.httpClient.post<Contract[]>(`${this.urlContracts}`, this.bookString, {
+    return this.httpClient.post<Contract[]>(`${this.urlContracts}`, contractStr, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }
@@ -29,7 +30,7 @@ export class ContractService {
     // const searchUrl = `${this.urlGetContracts}/search/categoryid?id=${theCategoryId}`;
     const searchUrl = `${this.urlContracts}`;
     return this.httpClient.get<Contract[]>(searchUrl).pipe(
-      map(response => response)
+      map(response => this.rowData = response)
     );
   }
 }

@@ -12,6 +12,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-enterprise';
 import * as angular from "angular"
 import { ContractStatement } from 'src/app/common/contract-statement';
+import { ContractService } from 'src/app/services/contract.service';
 
 import { ContractStatementService } from '../../services/contract-statement.service';
 
@@ -29,6 +30,8 @@ export class ContractStatementComponent {
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },
+    { headerName: '合同编号', field: 'contractNum' },
+
     { headerName: '交易日期', field: 'transactionAt' },
     { headerName: '凭证号码', field: 'voucherNum' },
     { headerName: '借方金额', field: 'debitAmount' },
@@ -91,13 +94,28 @@ export class ContractStatementComponent {
 
 
   constructor(private http: HttpClient,
-    private contractStatementService: ContractStatementService) { }
+    private contractStatementService: ContractStatementService,
+    private contractService: ContractService) { }
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
     this.refreshGridData();
+  }
+
+  filterContractNum() {
+    if (this.contractService.contractNum == null) {
+      this.gridApi.setFilterModel(null);
+    }
+    else {
+      this.gridApi.setFilterModel({
+        contractNum: {
+          type: 'set',
+          values: [this.contractService.contractNum],
+        },
+      });
+    }
   }
 
   updateDbSelectedRows() {
@@ -113,7 +131,10 @@ export class ContractStatementComponent {
 
   refreshGridData() {
     this.contractStatementService.getContractStatements().subscribe(
-      data => this.gridApi.setRowData(data)
+      data => {
+        this.gridApi.setRowData(data);
+        this.filterContractNum();
+      }
     );
   }
 }

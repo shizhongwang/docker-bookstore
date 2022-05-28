@@ -15,6 +15,7 @@ public class ContractStatement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String contractNum;
     private Date transactionAt;
     private String voucherNum;
     private double debitAmount;
