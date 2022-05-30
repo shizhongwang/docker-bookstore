@@ -18,6 +18,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-enterprise';
 import * as angular from "angular"
+import * as XLSX from 'xlsx';
 import { Contract } from 'src/app/common/contract';
 
 import { ContractService } from '../../services/contract.service';
@@ -201,6 +202,40 @@ export class ContractComponent {
     alert('Update DB successfully.');
 
     this.refreshGridData();
+  }
+
+  onFileChange(ev) {
+    let workBook = null;
+    let jsonData = null;
+    const reader = new FileReader();
+    const file = ev.target.files[0];
+    reader.onload = (event) => {
+      const data = reader.result;
+      workBook = XLSX.read(data, { type: 'binary' });
+      jsonData = workBook.SheetNames.reduce((initial, name) => {
+        const sheet = workBook.Sheets[name];
+        initial[name] = XLSX.utils.sheet_to_json(sheet);
+        return initial;
+      }, {});
+
+
+      var wsn = workBook.SheetNames[0];
+      var ws = workBook.Sheets[wsn];
+      const range = XLSX.utils.decode_range(ws['!ref']);
+
+      // var aoa = XLSX.utils.sheet_to_json(ws, {
+      //   raw: false,
+      //   header: 1,
+      //   range: range
+      // });
+
+      var aoa = XLSX.utils.sheet_to_json(ws);
+      this.gridApi.setRowData(aoa);
+
+      // const dataString = JSON.stringify(aoa);
+      // document.getElementById('output').innerHTML = dataString.slice(0, 300).concat("...");
+    }
+    reader.readAsBinaryString(file);
   }
 
 }

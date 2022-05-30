@@ -39,7 +39,7 @@ import { ContractStatementUploadComponent } from './components/contract-statemen
 
 
 const routes: Routes = [
-  { path: 'contract', component: ContractUploadComponent},
+  { path: 'contract', component: ContractComponent},
   { path: 'contract-statement-upload', component: ContractStatementUploadComponent },
   { path: 'contract-invoice-upload', component: ContractInvoiceUploadComponent },
 
