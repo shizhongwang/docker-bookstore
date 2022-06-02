@@ -33,11 +33,11 @@ export class SearchComponent implements OnInit {
   }
 
   callStatementForm() {
-    this._router.navigateByUrl('contract-statement-upload');
+    this._router.navigateByUrl('contract-statement');
   }
 
   callInvoiceForm() {
-    this._router.navigateByUrl('contract-invoice-upload');
+    this._router.navigateByUrl('contract-invoice');
   }
 
 }

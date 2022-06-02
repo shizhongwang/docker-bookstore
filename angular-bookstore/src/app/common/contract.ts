@@ -10,11 +10,12 @@
 
 export class Contract {
     id: number;
+
     clientName: string;
     contractNum: string;
+
     contractAt: Date;
     contractAmount: number;
-
     projectName: string;
     description: string;
 

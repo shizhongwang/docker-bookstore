@@ -11,6 +11,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-enterprise';
 import * as angular from "angular"
+import * as XLSX from 'xlsx';
 import { ContractStatement } from 'src/app/common/contract-statement';
 import { ContractService } from 'src/app/services/contract.service';
 
@@ -30,13 +31,29 @@ export class ContractStatementComponent {
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },
+    { headerName: '客户', field: 'clientName' },
     { headerName: '合同编号', field: 'contractNum' },
 
     { headerName: '交易日期', field: 'transactionAt' },
     { headerName: '凭证号码', field: 'voucherNum' },
-    { headerName: '借方金额', field: 'debitAmount' },
-    { headerName: '贷方金额', field: 'creditAmount' },
-    { headerName: '余额', field: 'remainingBalance' },
+    {
+      headerName: '借方金额', field: 'debitAmount',
+      valueFormatter: "'$' + value.toLocaleString()",
+      width: 200,
+      aggFunc: 'sum'
+    },
+    {
+      headerName: '贷方金额', field: 'creditAmount',
+      valueFormatter: "'$' + value.toLocaleString()",
+      width: 200,
+      aggFunc: 'sum'
+    },
+    {
+      headerName: '余额', field: 'remainingBalance',
+      valueFormatter: "'$' + value.toLocaleString()",
+      width: 200,
+      aggFunc: 'sum'
+    },
 
     { headerName: '柜员流水', field: 'bankSerialId' },
     { headerName: '对方账户', field: 'oppositeAccountNum' },
@@ -103,8 +120,60 @@ export class ContractStatementComponent {
 
     this.refreshGridData();
   }
+  refreshGridData() {
+    this.contractStatementService.getContractStatements().subscribe(
+      data => {
+        this.gridApi.setRowData(data);
+        this.setGridDataFormat();
+      }
+    );
+  }
 
-  filterContractNum() {
+
+  setGridDataFormat() {
+    this.filterByContractNum();
+    // this.setStaticsCount();
+    // this.selectRowByContractNum();
+    this.setColAutoSize();
+  }
+  setColAutoSize() {
+    // 调整列宽自适应
+    let allColumnIds = [];
+    this.gridColumnApi.getAllColumns().forEach(function (column) {
+      allColumnIds.push(column.colId);
+    });
+    this.gridColumnApi.autoSizeColumns(allColumnIds, false);
+  }
+  setStaticsCount() {
+    var total = 0;
+    for (var i = 0; i < this.rowData.length; i++) {
+      total = total + parseInt(this.rowData[i].contractAmount);
+    }
+
+    var topRows = [
+      { id: '合计', clientName: '合计', contractAmount: total }
+    ];
+
+    // this.gridColumnApi.setPinnedTopRowData(topRows);  //在顶部显示合计行
+    this.gridApi.setPinnedBottomRowData(topRows);  //在底部显示合计行
+  }
+  selectRowByContractNum() {
+    // console.log(this.contractService.contractNum);
+    var api = this.gridApi;
+    var contactNum = this.contractService.contractNum;
+    if (this.contractService.contractNum == null) {
+      return;
+    }
+    else {
+      setTimeout(function () {
+        api.forEachNode(node => {
+          if (node.data.contractNum === contactNum)
+            node.setSelected(true);
+        });
+      }, 2000);
+    }
+  }
+  filterByContractNum() {
     if (this.contractService.contractNum == null) {
       this.gridApi.setFilterModel(null);
     }
@@ -118,7 +187,31 @@ export class ContractStatementComponent {
     }
   }
 
-  updateDbSelectedRows() {
+
+
+
+
+
+
+  onFilterReset() {
+    this.gridApi.setFilterModel(null);
+  }
+
+  onSelectionChanged(event) {
+    if (event.api.getSelectedNodes().length == 0) {
+      this.contractService.contractNum = null;
+      return;
+    }
+
+    var selRow = event.api.getSelectedNodes()[0]; //获取选中的行
+    var data = selRow.data;
+    // data.clientName = '小明';
+    // selRow.setData(data);
+
+    this.contractService.contractNum = data.contractNum;
+    console.log(this.contractService.contractNum);
+  }
+  onUpdateDbSelectedRows() {
     var rows = <ContractStatement[]>this.gridApi.getSelectedRows();
 
     this.contractStatementService.createContractStatements(rows).subscribe(data => {
@@ -129,14 +222,41 @@ export class ContractStatementComponent {
     this.refreshGridData();
   }
 
-  refreshGridData() {
-    this.contractStatementService.getContractStatements().subscribe(
-      data => {
-        this.gridApi.setRowData(data);
-        this.filterContractNum();
-      }
-    );
+  onFileChange(ev) {
+    let workBook = null;
+    let jsonData = null;
+    const reader = new FileReader();
+    const file = ev.target.files[0];
+    reader.onload = (event) => {
+      const data = reader.result;
+      workBook = XLSX.read(data, { type: 'binary' });
+      jsonData = workBook.SheetNames.reduce((initial, name) => {
+        const sheet = workBook.Sheets[name];
+        initial[name] = XLSX.utils.sheet_to_json(sheet);
+        return initial;
+      }, {});
+
+
+      var wsn = workBook.SheetNames[0];
+      var ws = workBook.Sheets[wsn];
+      const range = XLSX.utils.decode_range(ws['!ref']);
+
+      // var aoa = XLSX.utils.sheet_to_json(ws, {
+      //   raw: false,
+      //   header: 1,
+      //   range: range
+      // });
+
+      var aoa = XLSX.utils.sheet_to_json(ws);
+      this.gridApi.setRowData(aoa);
+
+      // const dataString = JSON.stringify(aoa);
+      // document.getElementById('output').innerHTML = dataString.slice(0, 300).concat("...");
+    }
+    reader.readAsBinaryString(file);
   }
+
+
 }
 
 var checkboxSelection = function (params: CheckboxSelectionCallbackParams) {

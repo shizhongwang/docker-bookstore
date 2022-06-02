@@ -50,6 +50,7 @@ export class ContractComponent {
     },
     { headerName: '客户', field: 'clientName', filter: 'agSetColumnFilter', },
     { headerName: '合同编号', field: 'contractNum' },
+
     { headerName: '合同日期', field: 'contractAt' },
     {
       headerName: '应收账款',
@@ -129,11 +130,19 @@ export class ContractComponent {
     this.gridApi.setRowData(rowData);
     this.rowData = rowData;
 
-    this.setStaticsCount();
+    this.setGridDataFormat();
+  }
+
+
+
+
+
+
+  setGridDataFormat(){
+    // this.setStaticsCount();
     this.selectRowByContractNum();
     this.setColAutoSize();
   }
-
   setColAutoSize(){
     // 调整列宽自适应
     let allColumnIds = [];
@@ -142,7 +151,6 @@ export class ContractComponent {
     });
     this.gridColumnApi.autoSizeColumns(allColumnIds, false);
   }
-
   setStaticsCount() {
     var total = 0;
     for (var i = 0; i < this.rowData.length; i++) {
@@ -156,7 +164,6 @@ export class ContractComponent {
     // this.gridColumnApi.setPinnedTopRowData(topRows);  //在顶部显示合计行
     this.gridApi.setPinnedBottomRowData(topRows);  //在底部显示合计行
   }
-
   selectRowByContractNum() {
     // console.log(this.contractService.contractNum);
     var api = this.gridApi;
@@ -173,6 +180,11 @@ export class ContractComponent {
       }, 2000);
     }
   }
+
+
+
+
+
 
   onFilterReset() {
     this.gridApi.setFilterModel(null);

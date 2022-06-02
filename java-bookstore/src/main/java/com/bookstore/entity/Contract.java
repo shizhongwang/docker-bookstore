@@ -18,8 +18,8 @@ public class Contract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String clientName;
     private String contractNum;
+    private String clientName;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "dd/MM/yyyy")         //to accept the json string format

@@ -16,6 +16,8 @@ public class ContractStatement {
     private Long id;
 
     private String contractNum;
+    private String clientName;
+
     private Date transactionAt;
     private String voucherNum;
     private double debitAmount;

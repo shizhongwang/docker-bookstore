@@ -30,18 +30,17 @@ import { FileReviewGridComponent } from './components/file-review-grid/file-revi
 
 
 import { ContractComponent } from './components/contract/contract.component';
-import { ContractUploadComponent } from './components/contract-upload/contract-upload.component';
 import { ContractInvoiceComponent } from './components/contract-invoice/contract-invoice.component';
-import { ContractInvoiceUploadComponent } from './components/contract-invoice-upload/contract-invoice-upload.component';
+
 import { ContractStatementComponent } from './components/contract-statement/contract-statement.component';
-import { ContractStatementUploadComponent } from './components/contract-statement-upload/contract-statement-upload.component';
+
 
 
 
 const routes: Routes = [
   { path: 'contract', component: ContractComponent},
-  { path: 'contract-statement-upload', component: ContractStatementUploadComponent },
-  { path: 'contract-invoice-upload', component: ContractInvoiceUploadComponent },
+  { path: 'contract-statement', component: ContractStatementComponent },
+  { path: 'contract-invoice', component: ContractInvoiceComponent },
 
   {path: 'file-review-grid', component: FileReviewGridComponent},
 
@@ -77,11 +76,9 @@ const routes: Routes = [
 
 
     ContractComponent,
-    ContractUploadComponent,
     ContractInvoiceComponent,
-    ContractInvoiceUploadComponent,
     ContractStatementComponent,
-    ContractStatementUploadComponent
+
     //client side paging
     //JwPaginationComponent
   ],

@@ -16,10 +16,11 @@ public class ContractInvoice {
     private Long id;
 
     private String contractNum;
+    private String clientName;
+
     private String invoiceCategory;
     private String invoiceId;
     private String invoiceNum;
-    private String clientName;
     private String productCategory;
     private String productName;
     private String productModel;

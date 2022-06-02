@@ -25,12 +25,13 @@
 
 export class ContractInvoice {
     id: number;
+
+    clientName: string;
     contractNum: string;
 
     invoiceCategory: string;
     invoiceId: string;
     invoiceNum: string;
-    clientName: string;
 
     productCategory: string;
     productName: string;

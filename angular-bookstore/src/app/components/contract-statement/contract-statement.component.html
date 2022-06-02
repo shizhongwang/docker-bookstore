@@ -1,4 +1,4 @@
-<div style="margin-bottom: 5px; min-height: 30px;">
+<!-- <div style="margin-bottom: 5px; min-height: 30px;">
     <h5>对账单明细 <button (click)="updateDbSelectedRows()">根据选择行更新数据库</button> </h5>
 </div>
 
@@ -16,7 +16,48 @@
     [enableRangeSelection]="true"
     [pagination]="true"
     [rowData]="rowData" (gridReady)="onGridReady($event)"></ag-grid-angular>
+</div> -->
+
+
+<div style="margin-bottom: 5px; min-height: 30px;">
+    <div class="input-group">
+        <h4>对账单明细</h4>
+        <input type="text" class="form-control" placeholder="请选择文件" />
+        <span class="input-group-btn">
+            <label for="forexIO_file" class="btn btn-success">上传</label>
+            <input id="forexIO_file" type="file" (change)="onFileChange($event)" style="display: none" />
+        </span>
+
+        <button type="submit" (click)="onUpdateDbSelectedRows()" class="btn btn-danger ml-5">根据选择行更新数据库</button>
+        <button type="submit" (click)="onFilterReset()" class="btn btn-success ml-2">清除过滤条件</button>
+    </div>
+
 </div>
+
+
+<ag-grid-angular style="width: 100%; height: 800px; margin: auto"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [autoGroupColumnDef]="autoGroupColumnDef"
+    [defaultColDef]="defaultColDef"
+    [suppressRowClickSelection]="true"
+    [groupSelectsChildren]="true"
+    [rowSelection]="rowSelection"
+    [rowGroupPanelShow]="rowGroupPanelShow"
+    [pivotPanelShow]="pivotPanelShow"
+    [enableRangeSelection]="true"
+    [pagination]="true"
+    [enableBrowserTooltips]="true"
+
+    [groupIncludeFooter]="true"
+    [groupIncludeTotalFooter]="true"
+    [animateRows]="true"
+
+    [rowData]="rowData" (gridReady)="onGridReady($event)" >
+</ag-grid-angular>
+
+<!-- Options for ag-grid
+      [sideBar]="true" -->
 
 
 <script>

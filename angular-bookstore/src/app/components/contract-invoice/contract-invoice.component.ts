@@ -11,6 +11,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-enterprise';
 import * as angular from "angular"
+import * as XLSX from 'xlsx';
 import { ContractInvoice } from 'src/app/common/contract-invoice';
 
 import { ContractService } from 'src/app/services/contract.service';
@@ -54,12 +55,13 @@ export class ContractInvoiceComponent {
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },
+
+    { headerName: '客户', field: 'clientName' },
     { headerName: '合同编号', field: 'contractNum' },
 
     { headerName: '发票代码', field: 'invoiceCategory' },
     { headerName: '发票号码', field: 'invoiceId' },
     { headerName: '发票金额', field: 'invoiceNum' },
-    { headerName: '客户', field: 'clientName' },
 
     { headerName: '商品类别', field: 'productCategory' },
     { headerName: '商品名称', field: 'productName' },
@@ -67,10 +69,26 @@ export class ContractInvoiceComponent {
     { headerName: '单位', field: 'productUnit' },
     { headerName: '数量', field: 'productCount' },
 
-    { headerName: '金额', field: 'amount' },
-    { headerName: '税额', field: 'tax' },
-    { headerName: '合计金额', field: 'sum' },
-    { headerName: '总合计', field: 'invoiceSum' },
+    { headerName: '金额', field: 'amount',
+      valueFormatter: "'$' + value.toLocaleString()",
+      width: 200,
+      aggFunc: 'sum'
+    },
+    { headerName: '税额', field: 'tax' ,
+      valueFormatter: "'$' + value.toLocaleString()",
+      width: 200,
+      aggFunc: 'sum'
+    },
+    { headerName: '合计金额', field: 'sum',
+      valueFormatter: "'$' + value.toLocaleString()",
+      width: 200,
+      aggFunc: 'sum'
+    },
+    { headerName: '总合计', field: 'invoiceSum',
+      valueFormatter: "'$' + value.toLocaleString()",
+      width: 200,
+      aggFunc: 'sum'
+    },
     { headerName: '开票日期', field: 'invoiceAt' },
 
     // {
@@ -136,7 +154,59 @@ export class ContractInvoiceComponent {
     console.log(this.contractService.contractNum);
   }
 
-  filterContractNum() {
+  refreshGridData() {
+    this.contractInvoiceService.getContractInvoices().subscribe(
+      data => {
+        this.gridApi.setRowData(data);
+        this.setGridDataFormat();
+      }
+    );
+  }
+
+  setGridDataFormat() {
+    this.filterByContractNum();
+    // this.setStaticsCount();
+    // this.selectRowByContractNum();
+    this.setColAutoSize();
+  }
+  setColAutoSize() {
+    // 调整列宽自适应
+    let allColumnIds = [];
+    this.gridColumnApi.getAllColumns().forEach(function (column) {
+      allColumnIds.push(column.colId);
+    });
+    this.gridColumnApi.autoSizeColumns(allColumnIds, false);
+  }
+  setStaticsCount() {
+    var total = 0;
+    for (var i = 0; i < this.rowData.length; i++) {
+      total = total + parseInt(this.rowData[i].contractAmount);
+    }
+
+    var topRows = [
+      { id: '合计', clientName: '合计', contractAmount: total }
+    ];
+
+    // this.gridColumnApi.setPinnedTopRowData(topRows);  //在顶部显示合计行
+    this.gridApi.setPinnedBottomRowData(topRows);  //在底部显示合计行
+  }
+  selectRowByContractNum() {
+    // console.log(this.contractService.contractNum);
+    var api = this.gridApi;
+    var contactNum = this.contractService.contractNum;
+    if (this.contractService.contractNum == null) {
+      return;
+    }
+    else {
+      setTimeout(function () {
+        api.forEachNode(node => {
+          if (node.data.contractNum === contactNum)
+            node.setSelected(true);
+        });
+      }, 2000);
+    }
+  }
+  filterByContractNum() {
     if (this.contractService.contractNum == null) {
       this.gridApi.setFilterModel(null);
     }
@@ -150,7 +220,31 @@ export class ContractInvoiceComponent {
     }
   }
 
-  updateDbSelectedRows() {
+
+
+
+
+
+  onFilterReset() {
+    this.gridApi.setFilterModel(null);
+  }
+
+  onSelectionChanged(event) {
+    if (event.api.getSelectedNodes().length == 0) {
+      this.contractService.contractNum = null;
+      return;
+    }
+
+    var selRow = event.api.getSelectedNodes()[0]; //获取选中的行
+    var data = selRow.data;
+    // data.clientName = '小明';
+    // selRow.setData(data);
+
+    this.contractService.contractNum = data.contractNum;
+    console.log(this.contractService.contractNum);
+  }
+
+  onUpdateDbSelectedRows() {
     var rows = <ContractInvoice[]>this.gridApi.getSelectedRows();
 
     this.contractInvoiceService.createContractInvoices(rows).subscribe(data => {
@@ -161,13 +255,38 @@ export class ContractInvoiceComponent {
     this.refreshGridData();
   }
 
-  refreshGridData() {
-    this.contractInvoiceService.getContractInvoices().subscribe(
-      data => {
-        this.gridApi.setRowData(data);
-        this.filterContractNum();
-      }
-    );
+  onFileChange(ev) {
+    let workBook = null;
+    let jsonData = null;
+    const reader = new FileReader();
+    const file = ev.target.files[0];
+    reader.onload = (event) => {
+      const data = reader.result;
+      workBook = XLSX.read(data, { type: 'binary' });
+      jsonData = workBook.SheetNames.reduce((initial, name) => {
+        const sheet = workBook.Sheets[name];
+        initial[name] = XLSX.utils.sheet_to_json(sheet);
+        return initial;
+      }, {});
+
+
+      var wsn = workBook.SheetNames[0];
+      var ws = workBook.Sheets[wsn];
+      const range = XLSX.utils.decode_range(ws['!ref']);
+
+      // var aoa = XLSX.utils.sheet_to_json(ws, {
+      //   raw: false,
+      //   header: 1,
+      //   range: range
+      // });
+
+      var aoa = XLSX.utils.sheet_to_json(ws);
+      this.gridApi.setRowData(aoa);
+
+      // const dataString = JSON.stringify(aoa);
+      // document.getElementById('output').innerHTML = dataString.slice(0, 300).concat("...");
+    }
+    reader.readAsBinaryString(file);
   }
 }
 
