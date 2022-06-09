@@ -18,6 +18,7 @@ public class Contract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String companyName;
     private String contractNum;
     private String clientName;
 

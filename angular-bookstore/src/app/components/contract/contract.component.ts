@@ -30,39 +30,44 @@ import { ContractService } from '../../services/contract.service';
   styleUrls: ['./contract.component.css']
 })
 
-// `id`             BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-// `client_name`           VARCHAR(255)   DEFAULT NULL,
-// `contract_num`    VARCHAR(255)   DEFAULT NULL,
-// `contract_at`      DATETIME       DEFAULT NULL,
-// `contract_amount`         DECIMAL(13, 2) DEFAULT NULL,
-// `project_name`    VARCHAR(255)   DEFAULT NULL,
-
-// `desc`    VARCHAR(10240)   DEFAULT NULL,
-//客户	扫描件	应收账款	合同编号	合同日期	项目名称	合同金额
-
 export class ContractComponent {
+
+  public mapField = new Map([
+          ['ID', 'id'],
+          ['公司', 'companyName'],
+          ['客户', 'clientName'],
+          ['合同编号', 'contractNum'],
+          ['合同日期', 'contractAt'],
+          ['应收账款', 'contractAmount'],
+          ['项目名称', 'projectName'],
+          ['备注', 'description'],
+          ['创建时间', 'createAt'],
+          ['更新时间', 'updateAt'],
+        ]);
+
   public columnDefs: ColDef[] = [
     {
-      headerName: 'ID', field: 'id',
+      headerName: 'ID', field: this.mapField.get("ID"),
       // minWidth: 30,
       checkboxSelection: checkboxSelection,
       headerCheckboxSelection: headerCheckboxSelection,
     },
-    { headerName: '客户', field: 'clientName', filter: 'agSetColumnFilter', },
-    { headerName: '合同编号', field: 'contractNum' },
+    { headerName: '公司', field: this.mapField.get("公司") },
+    { headerName: '客户', field: this.mapField.get("客户"), filter: 'agSetColumnFilter', },
+    { headerName: '合同编号', field: this.mapField.get("合同编号") },
 
-    { headerName: '合同日期', field: 'contractAt' },
+    { headerName: '合同日期', field: this.mapField.get("合同日期") },
     {
       headerName: '应收账款',
-      field: 'contractAmount',
+      field: this.mapField.get("应收账款"),
       valueFormatter: "'$' + value.toLocaleString()",
       width: 200,
       aggFunc: 'sum'
     },
-    { headerName: '项目名称', field: 'projectName' },
-    { headerName: '备注', field: 'description' },
-    { headerName: '创建时间', field: 'createAt' },
-    { headerName: '更新时间', field: 'updateAt' },
+    { headerName: '项目名称', field: this.mapField.get("项目名称") },
+    { headerName: '备注', field: this.mapField.get("备注") },
+    { headerName: '创建时间', field: this.mapField.get("创建时间") },
+    { headerName: '更新时间', field: this.mapField.get("更新时间") },
   ];
   public autoGroupColumnDef: ColDef = {
     headerName: 'Group',
@@ -241,14 +246,26 @@ export class ContractComponent {
       //   range: range
       // });
 
+      //change the field name in Chinese into English, to aline with DB schema
       var aoa = XLSX.utils.sheet_to_json(ws);
-      this.gridApi.setRowData(aoa);
+      var convertContent = JSON.stringify(aoa);
+      convertContent = convertContent.replace(/"ID"/gi, '"' + this.mapField.get("ID") + '"');
+      convertContent = convertContent.replace(/"公司"/gi, '"' + this.mapField.get("公司") + '"');
+      convertContent = convertContent.replace(/"客户"/gi, '"' + this.mapField.get("客户") + '"');
+      convertContent = convertContent.replace(/"合同编号"/gi, '"' + this.mapField.get("合同编号") + '"');
+      convertContent = convertContent.replace(/"合同日期"/gi, '"' + this.mapField.get("合同日期") + '"');
+      convertContent = convertContent.replace(/"应收账款"/gi, '"' + this.mapField.get("应收账款") + '"');
+      convertContent = convertContent.replace(/"项目名称"/gi, '"' + this.mapField.get("项目名称") + '"');
+      convertContent = convertContent.replace(/"备注"/gi, '"' + this.mapField.get("备注") + '"');
+      convertContent = convertContent.replace(/"创建时间"/gi, '"' + this.mapField.get("创建时间") + '"');
+      convertContent = convertContent.replace(/"更新时间"/gi, '"' + this.mapField.get("更新时间") + '"');
+      // console.log(convertContent);
 
-      // const dataString = JSON.stringify(aoa);
-      // document.getElementById('output').innerHTML = dataString.slice(0, 300).concat("...");
+      this.gridApi.setRowData(JSON.parse(convertContent));
     }
     reader.readAsBinaryString(file);
   }
+
 
 }
 

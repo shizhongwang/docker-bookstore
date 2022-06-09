@@ -11,6 +11,7 @@
 export class Contract {
     id: number;
 
+    companyName: string;
     clientName: string;
     contractNum: string;
 

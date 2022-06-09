@@ -33,14 +33,19 @@ import { ContractComponent } from './components/contract/contract.component';
 import { ContractInvoiceComponent } from './components/contract-invoice/contract-invoice.component';
 
 import { ContractStatementComponent } from './components/contract-statement/contract-statement.component';
-
-
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AuthGaurdService } from './services/auth-gaurd.service';
 
 
 const routes: Routes = [
-  { path: 'contract', component: ContractComponent},
-  { path: 'contract-statement', component: ContractStatementComponent },
-  { path: 'contract-invoice', component: ContractInvoiceComponent },
+  { path: '', component: ContractComponent, canActivate: [AuthGaurdService] },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService] },
+
+  { path: 'contract', component: ContractComponent, canActivate: [AuthGaurdService]},
+  { path: 'contract-statement', component: ContractStatementComponent, canActivate: [AuthGaurdService] },
+  { path: 'contract-invoice', component: ContractInvoiceComponent, canActivate: [AuthGaurdService] },
 
   {path: 'file-review-grid', component: FileReviewGridComponent},
 
@@ -51,8 +56,8 @@ const routes: Routes = [
   {path: 'book-create-form', component: BookCreateFormComponent},
   {path: 'search/:keyword', component: BookListComponent},
   {path: 'category/:id', component: BookListComponent},
-  // {path: '', redirectTo: '/books', pathMatch: 'full'},
-  { path: '', redirectTo: '/contract', pathMatch: 'full' },
+
+  // { path: '', redirectTo: '/contract', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent}
 ];
 
@@ -78,6 +83,8 @@ const routes: Routes = [
     ContractComponent,
     ContractInvoiceComponent,
     ContractStatementComponent,
+    LoginComponent,
+    LogoutComponent,
 
     //client side paging
     //JwPaginationComponent
