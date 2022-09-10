@@ -5154,3 +5154,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-06-09 21:58:55.176 INFO  org.apache.juli.logging.DirectJDKLog 173 log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-06-09 21:58:55.184 INFO  org.springframework.web.servlet.FrameworkServlet 525 initServletBean - Initializing Servlet 'dispatcherServlet'
 2022-06-09 21:58:55.211 INFO  org.springframework.web.servlet.FrameworkServlet 547 initServletBean - Completed initialization in 27 ms
+2022-06-09 22:26:20.783 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport 218 shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-09 22:26:20.809 INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 651 destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-09 22:26:20.870 INFO  com.zaxxer.hikari.HikariDataSource 350 close - HikariPool-1 - Shutdown initiated...
+2022-06-09 22:26:20.950 INFO  com.zaxxer.hikari.HikariDataSource 352 close - HikariPool-1 - Shutdown completed.
