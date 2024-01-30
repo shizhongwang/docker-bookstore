@@ -2,10 +2,6 @@ package com.bookstore.controller;
 
 import com.bookstore.entity.Book;
 import com.bookstore.repository.BookRepository;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +30,6 @@ public class BookController {
     }
 
     //    @GetMapping("/books")
-    @ApiOperation("get a end user's JWT token")
     @RequestMapping(value = {"/books"}, method = RequestMethod.GET)
 //    @ApiImplicitParams(value = {
 //            @ApiImplicitParam(

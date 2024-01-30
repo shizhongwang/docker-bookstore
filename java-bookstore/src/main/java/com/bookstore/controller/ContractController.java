@@ -4,7 +4,6 @@ import com.bookstore.entity.Book;
 import com.bookstore.entity.Contract;
 import com.bookstore.repository.ContractRepository;
 import com.bookstore.service.ContractService;
-import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
