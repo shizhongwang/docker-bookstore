@@ -31,9 +31,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.plugin:spring-plugin-core:2.0.0.RELEASE'
 
-
     implementation 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    implementation ('org.springframework.boot:spring-boot-starter-actuator') {
+        exclude module: 'spring-boot-starter-logging'
+    }
 
     implementation 'com.alibaba:fastjson:1.2.49'
     runtimeOnly 'mysql:mysql-connector-java:5.1.46'

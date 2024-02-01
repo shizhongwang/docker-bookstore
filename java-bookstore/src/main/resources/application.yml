@@ -45,6 +45,16 @@ file:
 global:
   debug: true
 
+management:
+  endpoint:
+    shutdown:
+      enabled: true      # 开启shutdown功能
+  endpoints:
+    web:
+      exposure:
+        # all Actuator endpoints are to be exposed only in clp-dev env
+        include: "*"
+
 #  spring.datasource.url=jdbc:mysql://localhost:3306/test
 #  spring.datasource.username=root
 #  spring.datasource.password=root
