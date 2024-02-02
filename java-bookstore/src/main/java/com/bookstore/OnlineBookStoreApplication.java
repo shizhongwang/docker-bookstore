@@ -3,13 +3,19 @@ package com.bookstore;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bookstore.entity.meter.MeterData;
+import com.bookstore.entity.meter.PayloadDecode;
+import com.bookstore.utils.JsonUtil;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
+import java.lang.invoke.MethodHandles;
 
 @SpringBootApplication
 //@ComponentScans({
@@ -22,9 +28,9 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 //}
 
 public class OnlineBookStoreApplication extends SpringBootServletInitializer {
+    public static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     public static void main(String[] args) {
-
         String input = "{\n" +
                 "    \"upPacketSN\": -1,\n" +
                 "    \"upDataSN\": -1,\n" +
@@ -45,11 +51,7 @@ public class OnlineBookStoreApplication extends SpringBootServletInitializer {
                 "    \"IMEI\": \"863455067553505\"\n" +
                 "}\n";
 
-        var t = JSON.parseObject(input, MeterData.class);
-        byte[] bytes = Base64.decodeBase64(t.getPayload().getAPPdata());
-        String data = new String(bytes);
-
-        parseString();
+//        MeterData.parseString(input);
 
         SpringApplication.run(OnlineBookStoreApplication.class, args);
     }
@@ -59,18 +61,27 @@ public class OnlineBookStoreApplication extends SpringBootServletInitializer {
         return builder.sources(OnlineBookStoreApplication.class);
     }
 
-    public static void parseString(){
-        String input = "Cnt:1;Tick:1701396136;Tval:250;Hval:55;Dout:18;Dget:3;Tcp:0;Hcp:0;Bvol:0;Code:0;Tamper:1;Flag:0;Sver:S0217V10C;Hver:H1019V28C;IMEI:863455067553505;IMSI:460113067792239;RSSI:26;CellId:99796304;ICCID:89861122229005138596;RSRP:-66;ECL:0;SNR:9;";
+    public static void parseString(String input) {
+//        String input = "Cnt:1;Tick:1701396136;Tval:250;Hval:55;Dout:18;Dget:3;Tcp:0;Hcp:0;Bvol:0;Code:0;Tamper:1;Flag:0;Sver:S0217V10C;Hver:H1019V28C;IMEI:863455067553505;IMSI:460113067792239;RSSI:26;CellId:99796304;ICCID:89861122229005138596;RSRP:-66;ECL:0;SNR:9;";
+
+
+        var t = JSON.parseObject(input, MeterData.class);
+        logger.info("MeterData: {}", t);
+
+        byte[] bytes = Base64.decodeBase64(t.getPayload().getAPPdata());
+        String data = new String(bytes);
 
         JSONObject json = new JSONObject();
         String delimiter = ";";
-        String[] list = input.split(delimiter);
-        for(int i=0; i<list.length; i++){
+        String[] list = data.split(delimiter);
+        for (int i = 0; i < list.length; i++) {
             String[] items = list[i].split(":");
             json.put(items[0], items[1]);
         }
 
         String ret = json.toJSONString();
+        logger.info("PayloadDecode: {}", ret);
+        PayloadDecode payloadDecode = JSON.parseObject(ret, PayloadDecode.class);
         return;
     }
 }

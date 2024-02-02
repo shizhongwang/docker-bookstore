@@ -23,7 +23,7 @@ public class HttpAspect {
     @Before("log()")
     public void logBefore(JoinPoint joinPoint) {
         try {
-            System.out.println("拦截了getInfo方法");
+            logger.info("Before interception");
 
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             HttpServletRequest request = attributes.getRequest();
@@ -40,11 +40,11 @@ public class HttpAspect {
 
     @After("log()")
     public void logAfter() {
-        System.out.println("拦截了getInfo方法.之后");
+        logger.info("After interception");
     }
 
     @AfterReturning(returning = "object", pointcut = "log()")
     public void doAfterReturning(Object object) {
-        System.out.println(object);
+        logger.info("AfterReturning interception: {}", object);
     }
 }
